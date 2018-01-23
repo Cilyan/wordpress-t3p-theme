@@ -1,0 +1,101 @@
+@import "~bootstrap/scss/navbar";
+
+// Styling for the navbar
+#site-navigation {
+  border-bottom: 2px solid $white;
+  background-color: $secondary;
+  @include sans-serif-font;
+  @include transition-all;
+
+  // fixed-top
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
+
+  body.admin-bar & {
+    top: 32px !important;
+  }
+  @media screen and ( max-width: 782px ) {
+    body.admin-bar & {
+      top: 46px !important;
+    }
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $white;
+    @include sans-serif-font;
+    &:focus,
+    &:hover {
+      color: darken($primary, .1);
+    }
+  }
+  .navbar-nav {
+    margin-left: auto !important;
+    
+    > li.nav-item {
+       > a.nav-link,
+      > a.nav-link:focus {
+        font-size: .9rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $white;
+        &:hover {
+          color: darken($primary, .1);
+        }
+        &.active {
+          color: $primary !important;
+          background-color: transparent;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  .navbar-toggler {
+    border-color: $white;
+  }
+  @media (min-width: 992px) {
+    border-bottom: 2px solid $white;
+    background-color: rgba($secondary, 0.4);
+    .navbar-brand {
+      color: $white;
+      &:focus,
+      &:hover {
+        color: darken($primary, .1);
+      }
+    }
+    .navbar-nav > li.nav-item > a.nav-link {
+      padding: 0.5rem 1rem;
+    }
+    .navbar-nav > li.nav-item > a.nav-link,
+    .navbar-nav > li.nav-item > a.nav-link:focus {
+      color: $white;
+      &:hover {
+        color: darken($primary, .1);
+      }
+    }
+    &.navbar-shrink {
+      border-bottom: 2px solid $white;
+      background-color: $secondary;
+      .navbar-brand {
+        color: $white;
+        &:focus,
+        &:hover {
+          color: darken($primary, .1);
+        }
+      }
+      .navbar-nav > li.nav-item > a.nav-link,
+      .navbar-nav > li.nav-item > a.nav-link:focus {
+        color: $white;
+        &:hover {
+          color: darken($primary, .1);
+        }
+      }
+    }
+  }
+}

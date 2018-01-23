@@ -1,0 +1,30 @@
+/*!
+Theme Name: t3p
+Theme URI: https://www.cilyan.org/
+Author: Cilyan Olowen
+Author URI: https://www.cilyan.org/
+Description: Theme for the Trail des 3 Pics website
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: t3p
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import "variables/variables";
+@import "variables/mixins";
+
+@import "~bootstrap/scss/bootstrap-reboot.scss";
+
+@import "typography/typography";
+
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+$fa-font-path: "~font-awesome/fonts/";
+@import "~font-awesome/scss/font-awesome.scss";
+
+@import "accessibility/accessibility";
+@import "layout/layout";

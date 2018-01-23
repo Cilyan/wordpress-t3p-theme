@@ -1,0 +1,7 @@
+
+@import "~bootstrap/scss/mixins/_screen-reader.scss";
+
+.screen-reader-text {
+  @include sr-only;
+  @include sr-only-focusable;
+}
