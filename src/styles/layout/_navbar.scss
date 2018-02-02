@@ -23,6 +23,10 @@
     }
   }
 
+  a:hover {
+    text-decoration: none;
+  }
+
   .navbar-brand {
     font-weight: 700;
     text-transform: uppercase;
@@ -35,7 +39,7 @@
   }
   .navbar-nav {
     margin-left: auto !important;
-    
+
     > li.nav-item {
        > a.nav-link,
       > a.nav-link:focus {
