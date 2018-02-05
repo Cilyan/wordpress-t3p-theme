@@ -11,8 +11,8 @@
   background-size: cover;
 }
 @mixin serif-font() {
-  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font__main; // TODO: Change menu font
 }
 @mixin sans-serif-font() {
-  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font__main; // TODO: Change menu font
 }
