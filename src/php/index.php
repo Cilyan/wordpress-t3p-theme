@@ -14,42 +14,42 @@
 
 get_header(); ?>
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main container">
+<div id="primary" class="content-area">
+  <main id="main" class="site-main container" role="main">
 
     <?php
     if ( have_posts() ) :
 
-      if ( is_home() && ! is_front_page() ) : ?>
-        <header>
-          <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-        </header>
-
-      <?php
-      endif;
-
       /* Start the Loop */
-      while ( have_posts() ) : the_post();
+      while ( have_posts() ) :
+        the_post();
 
         /*
          * Include the Post-Format-specific template for the content.
          * If you want to override this in a child theme, then include a file
          * called content-___.php (where ___ is the Post Format name) and that will be used instead.
          */
-        get_template_part( 'template-parts/content', get_post_format() );
+        get_template_part( 'template-parts/post/content', get_post_format() );
 
       endwhile;
 
-      the_posts_navigation();
+      the_posts_pagination(
+        array(
+            'prev_text'          => t3p_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 't3p' ) . '</span>',
+            'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 't3p' ) . '</span>' . t3p_get_svg( array( 'icon' => 'arrow-right' ) ),
+            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 't3p' ) . ' </span>',
+        )
+      );
 
     else :
 
-      get_template_part( 'template-parts/content', 'none' );
+      get_template_part( 'template-parts/post/content', 'none' );
 
-    endif; ?>
+    endif;
+    ?>
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
+  </main><!-- #main -->
+</div><!-- #primary -->
 
 <?php
 get_sidebar();
