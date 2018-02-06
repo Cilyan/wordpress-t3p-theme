@@ -15,16 +15,18 @@ function t3p_customize_register( $wp_customize ) {
   $wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
   $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-  if ( isset( $wp_customize->selective_refresh ) ) {
-    $wp_customize->selective_refresh->add_partial( 'blogname', array(
-      'selector'        => '.site-title a',
+  $wp_customize->selective_refresh->add_partial(
+    'blogname', array(
+      'selector'        => '.site-title',
       'render_callback' => 't3p_customize_partial_blogname',
-    ) );
-    $wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+    )
+  );
+  $wp_customize->selective_refresh->add_partial(
+    'blogdescription', array(
       'selector'        => '.site-description',
       'render_callback' => 't3p_customize_partial_blogdescription',
-    ) );
-  }
+    )
+  );
 
   /**
    * Theme options.

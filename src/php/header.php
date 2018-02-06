@@ -27,11 +27,11 @@
   <div id="logo-overlay">
     <div class="container">
         <div class="logo-overlay-block">
-            <h3><?php bloginfo( 'name' ); ?></h3>
+            <h3 class="site-title"><?php bloginfo( 'name' ); ?></h3>
             <?php
             $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>
-              <p><?php echo $description; /* WPCS: xss ok. */ ?></p>
+              <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
             <?php
             endif; ?>
         </div>
@@ -41,7 +41,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="site-navigation">
     <div class="container">
-      <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+      <a class="navbar-brand site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -67,11 +67,11 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1><?php bloginfo( 'name' ); ?></h1>
+            <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
             <?php
             $description = get_bloginfo( 'description', 'display' );
             if ( $description || is_customize_preview() ) : ?>
-            <span class="subheading"><?php echo $description; /* WPCS: xss ok. */ ?></span>
+            <span class="subheading site-description"><?php echo $description; /* WPCS: xss ok. */ ?></span>
             <?php
             endif; ?>
           </div>
