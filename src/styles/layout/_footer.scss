@@ -1,0 +1,29 @@
+
+footer#colophon {
+  // TIP: Background images are set within the HTML using inline CSS!
+  padding: 3em 0 1.5em 0;
+  background-color: $secondary;
+  background-attachment: fixed;
+  background-position: center center;
+  @include background-cover;
+  border-top: 2px $white;
+  color: $white;
+
+  .site-info {
+    text-align: center;
+    color: $white;
+
+    a {
+      color: $white;
+
+      &:hover {
+        text-decoration: none;
+        color: $primary;
+      }
+      &:visited {
+        color: $white;
+      }
+    }
+  }
+
+}

@@ -25,6 +25,35 @@ function t3p_customize_register( $wp_customize ) {
       'render_callback' => 't3p_customize_partial_blogdescription',
     ) );
   }
+
+  /**
+   * Theme options.
+   */
+  $wp_customize->add_section(
+    'theme_options', array(
+      'title'    => __( 'Theme Options', 't3p' ),
+      'priority' => 130, // Before Additional CSS.
+    )
+  );
+
+  $wp_customize->add_setting(
+    't3p_footer_background', array(
+      'default' => esc_url(get_template_directory_uri()) . '/assets/images/footer_background.jpg'
+    )
+  );
+
+  $wp_customize->add_control(
+  new WP_Customize_Image_Control(
+    $wp_customize,
+    't3p_footer_background',
+      array(
+      'label'      => __( 'Footer Background', 't3p' ),
+      'section'    => 'theme_options',
+      'settings'   => 't3p_footer_background',
+      )
+    )
+  );
+
 }
 add_action( 'customize_register', 't3p_customize_register' );
 

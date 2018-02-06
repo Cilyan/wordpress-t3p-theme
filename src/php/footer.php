@@ -11,23 +11,37 @@
 
 ?>
 
-  </div><!-- #content -->
+	</div><!-- #content -->
 
-  <footer id="colophon" class="site-footer">
-    <div class="site-info">
-      <a href="<?php echo esc_url( __( 'https://wordpress.org/', 't3p' ) ); ?>"><?php
-        /* translators: %s: CMS name, i.e. WordPress. */
-        printf( esc_html__( 'Proudly powered by %s', 't3p' ), 'WordPress' );
-      ?></a>
-      <span class="sep"> | </span>
+  <footer id="colophon" class="site-footer" role="contentinfo" style="background-image: url('<?php t3p_get_footer_background(); ?>')">
+    <div class="container">
       <?php
-        /* translators: 1: Theme name, 2: Theme author. */
-        printf( esc_html__( 'Theme: %1$s by %2$s.', 't3p' ), 't3p', '<a href="https://automattic.com/">Automattic</a>' );
-      ?>
-    </div><!-- .site-info -->
-  </footer><!-- #colophon -->
-</div><!-- #page -->
+      get_template_part( 'template-parts/footer/footer', 'widgets' );
 
+      if ( has_nav_menu( 'social' ) ) :
+      ?>
+        <nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 't3p' ); ?>">
+          <?php
+            wp_nav_menu(
+              array(
+                'theme_location' => 'social',
+                'menu_class'     => 'social-links-menu',
+                'depth'          => 1,
+                'link_before'    => '<span class="screen-reader-text">',
+                'link_after'     => '</span>' . t3p_get_svg( array( 'icon' => 'chain' ) ),
+              )
+            );
+          ?>
+        </nav><!-- .social-navigation -->
+      <?php
+      endif;
+
+      get_template_part( 'template-parts/footer/site', 'info' );
+      ?>
+    </div><!-- .container -->
+  </footer><!-- #colophon -->
+
+</div><!-- #page -->
 <?php wp_footer(); ?>
 
 </body>

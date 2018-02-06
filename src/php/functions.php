@@ -101,15 +101,41 @@ add_action( 'after_setup_theme', 't3p_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function t3p_widgets_init() {
-  register_sidebar( array(
-    'name'          => esc_html__( 'Sidebar', 't3p' ),
-    'id'            => 'sidebar-1',
-    'description'   => esc_html__( 'Add widgets here.', 't3p' ),
-    'before_widget' => '<section id="%1$s" class="widget %2$s">',
-    'after_widget'  => '</section>',
-    'before_title'  => '<h2 class="widget-title">',
-    'after_title'   => '</h2>',
-  ) );
+  register_sidebar(
+    array(
+      'name'          => __( 'Blog Sidebar', 't3p' ),
+      'id'            => 'sidebar-1',
+      'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 't3p' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
+
+  register_sidebar(
+    array(
+      'name'          => __( 'Footer 1', 't3p' ),
+      'id'            => 'sidebar-2',
+      'description'   => __( 'Add widgets here to appear in your footer.', 't3p' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
+
+  register_sidebar(
+    array(
+      'name'          => __( 'Footer 2', 't3p' ),
+      'id'            => 'sidebar-3',
+      'description'   => __( 'Add widgets here to appear in your footer.', 't3p' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h2 class="widget-title">',
+      'after_title'   => '</h2>',
+    )
+  );
 }
 add_action( 'widgets_init', 't3p_widgets_init' );
 
