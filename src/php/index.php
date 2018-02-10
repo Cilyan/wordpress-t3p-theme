@@ -7,7 +7,7 @@
  * It is used to display a page when nothing more specific matches a query.
  * E.g., it puts together the home page when no home.php file exists.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package t3p
  */
@@ -52,8 +52,8 @@ get_header(); ?>
 
     </main><!-- #main -->
   </div><!-- #primary -->
-
+	<?php /*get_sidebar();*/ ?>
 </div><!-- .container -->
+
 <?php
-/*get_sidebar();*/
 get_footer();
