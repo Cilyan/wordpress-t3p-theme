@@ -1,0 +1,15 @@
+.widget-area {
+  margin: 0 0 1.5em;
+
+  /* Make sure select elements fit in widgets. */
+  select {
+    max-width: 100%;
+  }
+
+  h1 { font-size: $h1-widget-fontsize; line-height: 90%; margin: ($h1-widget-fontsize / 4) 0 ($h1-widget-fontsize / 2.5) 0;}
+  h2 { font-size: $h2-widget-fontsize; line-height: 90%; margin: ($h2-widget-fontsize / 4) 0 ($h2-widget-fontsize / 2.5) 0;}
+  h3 { font-size: $h3-widget-fontsize; line-height: 90%; margin: ($h3-widget-fontsize / 4) 0 ($h3-widget-fontsize / 2.5) 0;}
+  h4 { font-size: $h4-widget-fontsize; line-height: 90%; margin: ($h4-widget-fontsize / 4) 0 ($h4-widget-fontsize / 2.5) 0;}
+  h5 { font-size: $h5-widget-fontsize; line-height: 90%; margin: ($h5-widget-fontsize / 4) 0 ($h5-widget-fontsize / 2.5) 0;}
+  h6 { font-size: $h6-widget-fontsize; line-height: 90%; margin: ($h6-widget-fontsize / 4) 0 ($h6-widget-fontsize / 2.5) 0;}
+}
