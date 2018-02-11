@@ -2,13 +2,36 @@
 footer#colophon {
   // TIP: Background images are set within the HTML using inline CSS!
   padding: 3em 0 1.5em 0;
-  background-color: $secondary;
-  background-attachment: fixed;
-  background-position: center center;
-  @include background-cover;
+  background: {
+    repeat: no-repeat;
+    color: $secondary;
+    attachment: fixed;
+    position: center center;
+    size: cover;
+  }
   border-top: 2px $white;
   color: $white;
   clear: both;
+
+  aside.widget-area {
+    @include make-row();
+
+    .footer-widget-1 {
+      @include make-col-ready();
+
+      @include media-breakpoint-up("md") {
+        @include make-col(5);
+      }
+    }
+
+    .footer-widget-2 {
+      @include make-col-ready();
+
+      @include media-breakpoint-up("md") {
+        @include make-col(7);
+      }
+    }
+  }
 
   .site-info {
     text-align: center;
@@ -19,12 +42,11 @@ footer#colophon {
 
       &:hover {
         text-decoration: none;
-        color: $primary;
+        color: darken($primary, .1);
       }
       &:visited {
         color: $white;
       }
     }
   }
-
 }

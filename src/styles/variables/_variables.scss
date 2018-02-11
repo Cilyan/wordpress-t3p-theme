@@ -30,7 +30,7 @@ $color__link: royalblue;
 $color__link-visited: purple;
 $color__link-hover: midnightblue;
 $color__text-main: #404040;
-$color__placeholder: $gray-700;
+$color__placeholder: $gray-500;
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
@@ -64,6 +64,10 @@ $extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !defaul
 $small-and-down: "only screen and (max-width : #{$small-screen})" !default;
 $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+$wp-admin-bar-breakpoint: 782px !default;
+$wp-admin-bar-largewidth: 32px !default;
+$wp-admin-bar-smallwidth: 46px !default;
 
 
 // 20. Typography

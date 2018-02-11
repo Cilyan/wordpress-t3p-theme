@@ -9,12 +9,9 @@
     left: 0;
     z-index: $zindex-fixed;
 
-    body.admin-bar & {
-      // If viewport below 992px, the overlay is not displayed
-      top: 32px !important;
-    }
+    @include wp-admin-bar-adjust;
 
-    @media (min-width: 992px) {
+    @include media-breakpoint-up("lg") {
         display: block;
         position: absolute;
         z-index: 1031;
@@ -54,18 +51,20 @@
 // Styling for the masthead
 header.masthead {
   // TIP: Background images are set within the HTML using inline CSS!
-  //margin-bottom: 50px;
-  background: no-repeat center center;
-  background-color: $gray-600;
-  background-attachment: scroll;
   position: relative;
-  @include background-cover;
+  background: {
+    repeat: no-repeat;
+    color: $gray-600;
+    attachment: scroll;
+    position: center center;
+    size: cover;
+  }
   .page-heading,
   .post-heading,
   .site-heading {
     padding: 200px 0 150px;
     color: white;
-    @media only screen and (min-width: 768px) {
+    @include media-breakpoint-up("md") {
       padding: 200px 0;
     }
   }
@@ -84,7 +83,7 @@ header.masthead {
       margin: 10px 0 0;
       @include sans-serif-font;
     }
-    @media only screen and (min-width: 768px) {
+    @include media-breakpoint-up("md") {
       h1 {
         font-size: 80px;
       }
@@ -114,7 +113,7 @@ header.masthead {
         color: $white;
       }
     }
-    @media only screen and (min-width: 768px) {
+    @include media-breakpoint-up("md") {
       h1 {
         font-size: 55px;
       }

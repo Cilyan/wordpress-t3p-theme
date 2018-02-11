@@ -5,7 +5,7 @@
   border-bottom: 2px solid $white;
   background-color: $secondary;
   @include sans-serif-font;
-  @include transition-all;
+  transition: all 0.2s;
 
   // fixed-top
   position: fixed;
@@ -14,14 +14,7 @@
   left: 0;
   z-index: $zindex-fixed;
 
-  body.admin-bar & {
-    top: 32px !important;
-  }
-  @media screen and ( max-width: 782px ) {
-    body.admin-bar & {
-      top: 46px !important;
-    }
-  }
+  @include wp-admin-bar-adjust;
 
   a:hover {
     text-decoration: none;
@@ -63,7 +56,7 @@
   .navbar-toggler {
     border-color: $white;
   }
-  @media (min-width: 992px) {
+  @include media-breakpoint-up("lg") {
     border-bottom: 2px solid $white;
     background-color: rgba($secondary, 0.4);
     .navbar-brand {

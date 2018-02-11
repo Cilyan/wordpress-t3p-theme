@@ -110,25 +110,9 @@ input[type="submit"].secondary {
   }
 }
 
-/* Placeholder text color -- selectors need to be separate to work. */
-::-webkit-input-placeholder {
-  color: $color__placeholder;
-  font-family: $font__placeholder;
-}
-
-:-moz-placeholder {
-  color: $color__placeholder;
-  font-family: $font__placeholder;
-}
-
-::-moz-placeholder {
+::placeholder {
   color: $color__placeholder;
   font-family: $font__placeholder;
   opacity: 1;
   /* Since FF19 lowers the opacity of the placeholder by default */
-}
-
-:-ms-input-placeholder {
-  color: $color__placeholder;
-  font-family: $font__placeholder;
 }

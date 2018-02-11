@@ -1,18 +1,18 @@
 // Mixins
-@mixin transition-all() {
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
-}
-@mixin background-cover() {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 @mixin serif-font() {
   font-family: $font__main; // TODO: Change menu font
 }
 @mixin sans-serif-font() {
   font-family: $font__main; // TODO: Change menu font
+}
+
+@mixin wp-admin-bar-adjust() {
+  body.admin-bar & {
+    top: $wp-admin-bar-smallwidth;
+  }
+  @media screen and ( min-width: $wp-admin-bar-breakpoint ) {
+    body.admin-bar & {
+      top: $wp-admin-bar-largewidth;
+    }
+  }
 }

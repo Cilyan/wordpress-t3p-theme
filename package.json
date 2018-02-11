@@ -28,5 +28,9 @@
     "jquery": "^3.2.1",
     "popper.js": "^1.12.3",
     "typeplate-starter-kit": "^3.0.2"
-  }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
