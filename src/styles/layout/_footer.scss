@@ -8,6 +8,7 @@ footer#colophon {
   @include background-cover;
   border-top: 2px $white;
   color: $white;
+  clear: both;
 
   .site-info {
     text-align: center;
