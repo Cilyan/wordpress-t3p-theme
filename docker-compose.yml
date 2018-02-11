@@ -1,7 +1,7 @@
 version: '2'
 services:
   wordpress:
-    image: wordpress:latest # https://hub.docker.com/_/wordpress/
+    image: wordpress:latest
     ports:
       - "8001:80" # change ip if required
     volumes:
@@ -14,14 +14,12 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: password
-      #APACHE_RUN_USER: come
-      #APACHE_RUN_GROUP: come
     depends_on:
       - db
     networks:
       - wordpress-network
   db:
-    image: mariadb:latest # https://hub.docker.com/_/mysql/ - or mariadb https://hub.docker.com/_/mariadb
+    image: mariadb:latest
     volumes:
       - ./docker/wp-data:/var/lib/mysql
     environment:

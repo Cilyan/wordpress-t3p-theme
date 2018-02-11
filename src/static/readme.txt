@@ -1,19 +1,27 @@
-=== _s ===
+=== t3p ===
 
-Contributors: automattic
+Contributors: Cilyan Olowen
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.0
-Tested up to: 4.8
+Tested up to: 4.9
 Stable tag: 1.0.0
-License: GNU General Public License v2 or later
+License: GNU General Public License v3 or later
 License URI: LICENSE
 
-A starter theme called _s, or underscores.
+A theme for the les3pics.fr website.
 
 == Description ==
 
-Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+This is officially a theme for [www.les3pics.fr](https://www.les3pics.fr). It was constructed from [TwentySeventeen](https://wordpress.org/themes/twentyseventeen/) and [Underscores](https://underscores.me/), with inspiration from [SKT Adventure Lite](https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/).
+
+However, the theme can also be seen as a starter if you want to use common web development tools:
+ - A ready-to-use [docker-compose](https://www.docker.com/) Wordpress + MariaDB setup
+ - [Yarn][] to handle build dependencies
+ - [Webpack](https://yarnpkg.com/) as the building tool with watch feature
+ - [SCSS]( https://sass-lang.com/) for styling
+ - SVG icon font
+
 
 == Installation ==
 
@@ -23,16 +31,15 @@ Hi. I'm a starter theme called _s, or underscores, if you like. I'm a theme mean
 
 == Frequently Asked Questions ==
 
-= Does this theme support any plugins? =
-
-_s includes support for Infinite Scroll in Jetpack.
+Ask. :)
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+Initial release to come.
 
 == Credits ==
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Based on TwentySeventeen https://wordpress.org/themes/twentyseventeen/, (C) 2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Based on Adventure Lite https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme, (C) 2017 SKT Themes, [GPLv3](http://www.gnu.org/licenses/gpl.html)
+* Icons are from TwentySeventeen, or from Octicons https://octicons.github.com/, (C) GitHub, Inc., [MIT](https://github.com/primer/octicons/blob/master/LICENSE) or from FontAwesome https://fontawesome.com/, (C) FontAwesome, [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/). The remaining are original work! :)
