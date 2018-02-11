@@ -2,32 +2,28 @@
 /**
  * Displays top navigation
  *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.2
+ * @package t3p
  */
 
 ?>
-<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 't3p' ); ?>">
-	<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
-		<?php
-		echo t3p_get_svg( array( 'icon' => 'bars' ) );
-		echo t3p_get_svg( array( 'icon' => 'close' ) );
-		_e( 'Menu', 't3p' );
-		?>
-	</button>
-
-	<?php
-	wp_nav_menu(
-		array(
-			'theme_location' => 'top',
-			'menu_id'        => 'top-menu',
-		)
-	);
-	?>
-
-	<?php if ( ( t3p_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
-		<a href="#content" class="menu-scroll-down"><?php echo t3p_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll down to content', 't3p' ); ?></span></a>
-	<?php endif; ?>
-</nav><!-- #site-navigation -->
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="site-navigation">
+  <div class="container">
+    <a class="navbar-brand site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <?php
+      wp_nav_menu( array(
+          'theme_location'    => 'menu-primary',
+          'depth'             => 2,
+          'container'         => 'div',
+          'container_class'   => 'collapse navbar-collapse',
+          'container_id'      => 'navbarResponsive',
+          'menu_class'        => 'navbar-nav ml-auto',
+          'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+          'walker'            => new WP_Bootstrap_Navwalker())
+      );
+    ?>
+  </div>
+</nav>

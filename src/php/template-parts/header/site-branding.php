@@ -2,37 +2,22 @@
 /**
  * Displays header site branding
  *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
+ * @package t3p
  */
+ /* the_custom_logo(); */
 
 ?>
-<div class="site-branding">
-	<div class="wrap">
 
-		<?php the_custom_logo(); ?>
-
-		<div class="site-branding-text">
-			<?php if ( is_front_page() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif; ?>
-
-			<?php
-			$description = get_bloginfo( 'description', 'display' );
-
-			if ( $description || is_customize_preview() ) :
-			?>
-				<p class="site-description"><?php echo $description; ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding-text -->
-
-		<?php if ( ( t3p_is_frontpage() || ( is_home() && is_front_page() ) ) && ! has_nav_menu( 'top' ) ) : ?>
-		<a href="#content" class="menu-scroll-down"><?php echo t3p_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll down to content', 't3p' ); ?></span></a>
-	<?php endif; ?>
-
-	</div><!-- .wrap -->
-</div><!-- .site-branding -->
+<div id="logo-overlay">
+  <div class="container">
+      <div class="logo-overlay-block">
+          <h3 class="site-title"><?php bloginfo( 'name' ); ?></h3>
+          <?php
+          $description = get_bloginfo( 'description', 'display' );
+          if ( $description || is_customize_preview() ) : ?>
+            <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+          <?php
+          endif; ?>
+      </div>
+  </div>
+</div>

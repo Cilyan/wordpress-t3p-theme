@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -52,6 +53,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist/*']), /* Do not remove the top-level directory, or docker will loose the dynamic link to the virtual installation */
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',

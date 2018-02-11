@@ -4,9 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
+ * @package t3p
  */
 
 if ( ! function_exists( 't3p_posted_on' ) ) :
