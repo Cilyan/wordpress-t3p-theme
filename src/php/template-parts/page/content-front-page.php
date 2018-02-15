@@ -7,7 +7,7 @@
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 't3p-panel ' ); ?> >
-
+  
   <?php
   if ( has_post_thumbnail() ) :
     $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 't3p-featured-image' );
@@ -22,28 +22,29 @@
 
   <?php endif; ?>
 
-  <div class="panel-content">
-    <div class="wrap">
-      <header class="entry-header">
-        <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+  <div class="container">
+    <div class="panel-content">
+      <div class="wrap">
+        <header class="entry-header">
+          <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
 
-        <?php t3p_edit_link( get_the_ID() ); ?>
+          <?php t3p_edit_link( get_the_ID() ); ?>
 
-      </header><!-- .entry-header -->
+        </header><!-- .entry-header -->
 
-      <div class="entry-content">
-        <?php
-          /* translators: %s: Name of current post */
-          the_content(
-            sprintf(
-              __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 't3p' ),
-              get_the_title()
-            )
-          );
-        ?>
-      </div><!-- .entry-content -->
+        <div class="entry-content">
+          <?php
+            /* translators: %s: Name of current post */
+            the_content(
+              sprintf(
+                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 't3p' ),
+                get_the_title()
+              )
+            );
+          ?>
+        </div><!-- .entry-content -->
 
-    </div><!-- .wrap -->
-  </div><!-- .panel-content -->
-
+      </div><!-- .wrap -->
+    </div><!-- .panel-content -->
+  </div>
 </article><!-- #post-## -->

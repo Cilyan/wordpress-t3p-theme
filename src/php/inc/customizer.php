@@ -56,6 +56,50 @@ function t3p_customize_register( $wp_customize ) {
     )
   );
 
+  /**
+   * Filter number of front page sections in t3p.
+   *
+   * @param int $num_sections Number of front page sections.
+   */
+  $num_sections = apply_filters( 't3p_front_page_sections', 4 );
+
+  $wp_customize->add_section(
+    'front_page_options', array(
+      'title'    => __( 'Front Page Options', 't3p' ),
+      'priority' => 131, // Before Additional CSS.
+    )
+  );
+
+  // Create a setting and control for each of the sections available in the theme.
+  for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
+    $wp_customize->add_setting(
+      'panel_' . $i, array(
+        'default'           => false,
+        'sanitize_callback' => 'absint',
+        //'transport'         => 'postMessage',
+      )
+    );
+
+    $wp_customize->add_control(
+      'panel_' . $i, array(
+        /* translators: %d is the front page section number */
+        'label'           => sprintf( __( 'Front Page Section %d Content', 't3p' ), $i ),
+        'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'twentyseventeen' ) ),
+        'section'         => 'front_page_options',
+        'type'            => 'dropdown-pages',
+        'allow_addition'  => true,
+        'active_callback' => 't3p_is_static_front_page',
+      )
+    );
+
+    $wp_customize->selective_refresh->add_partial(
+      'panel_' . $i, array(
+        'selector'            => '#panel' . $i,
+        'render_callback'     => 't3p_front_page_section',
+        'container_inclusive' => true,
+      )
+    );
+  }
 }
 add_action( 'customize_register', 't3p_customize_register' );
 
@@ -75,6 +119,13 @@ function t3p_customize_partial_blogname() {
  */
 function t3p_customize_partial_blogdescription() {
   bloginfo( 'description' );
+}
+
+/**
+ * Return whether we're previewing the front page and it's a static page.
+ */
+function t3p_is_static_front_page() {
+  return ( is_front_page() && ! is_home() );
 }
 
 /**

@@ -1,0 +1,120 @@
+.front-page {
+
+  section {
+    width: 100%;
+    background: {
+      repeat: no-repeat;
+      color: $gray-600;
+      attachment: scroll;
+      position: center center;
+      size: cover;
+    }
+
+    .entry-header {
+      padding-top: 30px;
+      text-align: center;
+    }
+
+    .entry-content {
+      padding-bottom: 40px;
+    }
+  }
+
+  .recent-posts {
+
+    @include make-row();
+
+    article.front-excerpt {
+      @include make-col-ready();
+
+      min-height: 470px;
+      padding: {
+        bottom: 40px;
+      }
+
+      @include media-breakpoint-up("md") {
+        @include make-col(4, 12);
+      }
+
+      .datemonth {
+        width: 50px;
+        text-align: center;
+        padding: 0;
+        font-weight: bold;
+        font-size: 12px;
+        z-index: $zindex-dropdown - 1;
+        position: absolute;
+        left: 30px;
+        top: -20px;
+        background: $white;
+        line-height: 1.15;
+
+        span {
+          display: block;
+          padding: 5px 0;
+
+          &.date-day {
+            color: $white;
+            background: $primary;
+            font-size: 19px;
+            font-weight: bold;
+            padding: 7px 0;
+          }
+        }
+      }
+
+      .post_image {
+        margin: 0;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        background-color: $secondary;
+
+        img {
+          height: auto;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          min-height: 200px;
+          border: none;
+        }
+      }
+
+      .post_wrapper {
+        background: $white;
+        height: 100%;
+      }
+
+      .post_content {
+        padding: 25px;
+        font-size: $front-excerpt-fontsize;
+
+        p {
+          margin: {
+            top: 0.5em;
+            bottom: 0;
+          }
+        }
+
+        .post_meta {
+          font-size: $front-excerpt-meta-fontsize;
+        }
+
+        h2 {
+          font-size: $h2-front-excerpt-fontsize;
+          margin-bottom: $h2-front-excerpt-fontsize / 2;
+          margin-top: 4px;
+
+          a {
+            color: inherit;
+
+            &:hover {
+              text-decoration: none;
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
