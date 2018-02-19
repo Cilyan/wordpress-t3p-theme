@@ -1,3 +1,100 @@
 #main {
+
+  nav.navigation.pagination .nav-links {
+  // Make the div behave like a button
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle; // match .btn alignment given font-size hack above
+    left: auto;
+    right: auto;
+    width: 100%;
+    justify-content: center;
+
+    .page-numbers {
+      display: inline-block;
+      font-weight: bold;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      user-select: none;
+      border: $btn-border-width solid $white;
+      color: $white;
+      background-color: $color__background-button;
+      @include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
+      @include transition($btn-transition);
+
+      &.dots, &.current {
+        background: lighten($color__background-button, 15%);
+      }
+
+      // Share hover and focus styles
+      @include hover-focus {
+        &:not(.current, .dots)  {
+          text-decoration: none;
+          background: lighten($color__background-button, 15%);
+        }
+      }
+
+      &:focus,
+      &.focus {
+        outline: 0;
+      }
+
+      // Disabled comes first so active can properly restyle
+      &.disabled,
+      &:disabled {
+        opacity: $btn-disabled-opacity;
+        @include box-shadow(none);
+      }
+
+      // Opinionated: add "hand" cursor to non-disabled .btn elements
+      &:not(:disabled):not(.disabled) {
+        cursor: pointer;
+      }
+
+      &:not(:disabled):not(.disabled):active,
+      &:not(:disabled):not(.disabled).active {
+        background-image: none;
+        @include box-shadow($btn-active-box-shadow);
+
+        &:focus {
+          @include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+        }
+      }
+    }
+
+    > .page-numbers {
+      position: relative;
+      flex: 0 1 auto;
+
+      // Bring the hover, focused, and "active" buttons to the front to overlay
+      // the borders properly
+      @include hover {
+        z-index: 1;
+      }
+      &:focus,
+      &:active,
+      &.active {
+        z-index: 1;
+      }
+    }
+
+    // Prevent double borders when buttons are next to each other
+    .page-numbers + .page-numbers {
+      margin-left: -$btn-border-width;
+    }
+
+    > .page-numbers:first-child {
+      margin-left: 0;
+    }
+
+    // Reset rounded corners
+    > .page-numbers:not(:last-child):not(.dropdown-toggle) {
+      @include border-right-radius(0);
+    }
+
+    > .page-numbers:not(:first-child) {
+      @include border-left-radius(0);
+    }
   }
 }

@@ -93,7 +93,7 @@ button,
 input[type="button"],
 input[type="submit"] {
   &:hover, &:focus {
-    background: lighten($color__background-button, 10%);
+    background: lighten($color__background-button, 15%);
   }
 }
 
