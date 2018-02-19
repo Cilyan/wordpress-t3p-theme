@@ -10,7 +10,8 @@
 
 <div id="logo-overlay">
   <div class="container">
-      <div class="logo-overlay-block">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+        <div class="logo-overlay-block">
           <h3 class="site-title"><?php bloginfo( 'name' ); ?></h3>
           <?php
           $description = get_bloginfo( 'description', 'display' );
@@ -19,5 +20,6 @@
           <?php
           endif; ?>
       </div>
+    </a>
   </div>
 </div>
