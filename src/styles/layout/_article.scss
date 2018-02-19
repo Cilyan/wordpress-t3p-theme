@@ -94,6 +94,9 @@ article.post img {
         top: -11px;
     }
   }
+  &.sticky {
+    background-color: $color__background-sticky;
+  }
 }
 
 .main-container {

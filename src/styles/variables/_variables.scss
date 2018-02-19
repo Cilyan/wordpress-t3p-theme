@@ -22,6 +22,7 @@ $color__background-hr: #ccc;
 $color__background-button: $secondary !default;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
+$color__background-sticky: lighten($secondary, 80%) !default;
 
 $color__text-screen: #21759b;
 $color__text-input: $gray-600;
