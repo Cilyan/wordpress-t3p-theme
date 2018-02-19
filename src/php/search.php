@@ -9,18 +9,18 @@
 
 get_header(); ?>
 
-<div class="container">
+<div id="primary" class="content-area">
+  <main id="main" class="site-main" role="main">
 
-  <header class="page-header">
-    <?php if ( have_posts() ) : ?>
-      <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 't3p' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-    <?php else : ?>
-      <h1 class="page-title"><?php _e( 'Nothing Found', 't3p' ); ?></h1>
-    <?php endif; ?>
-  </header><!-- .page-header -->
+    <div class="container main-container">
 
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
+      <header class="page-header">
+        <?php if ( have_posts() ) : ?>
+          <h1 class="page-title"><?php printf( __( 'Search Results for: %s', 't3p' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+        <?php else : ?>
+          <h1 class="page-title"><?php _e( 'Nothing Found', 't3p' ); ?></h1>
+        <?php endif; ?>
+      </header><!-- .page-header -->
 
     <?php
     if ( have_posts() ) :
@@ -55,10 +55,10 @@ get_header(); ?>
     endif;
     ?>
 
-    </main><!-- #main -->
-  </div><!-- #primary -->
-  <?php /*get_sidebar();*/ ?>
-</div><!-- .container -->
+    </div><!-- .container -->
+  </main><!-- #main -->
+</div><!-- #primary -->
+<?php /*get_sidebar();*/ ?>
 
 <?php
 get_footer();
