@@ -205,6 +205,8 @@ add_filter( 'excerpt_more', 't3p_excerpt_more' );
  * Enqueue scripts and styles.
  */
 function t3p_scripts() {
+  wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Lato|Roboto|Roboto+Condensed');
+
   wp_enqueue_style( 't3p-style', get_stylesheet_uri() );
 
   wp_enqueue_script( 't3p-script', get_template_directory_uri() . '/script/main.js', array(), '20151215', true );
