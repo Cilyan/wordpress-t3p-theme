@@ -1,0 +1,281 @@
+# Copyright (C) 2018 Cilyan Olowen
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: t3p 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
+"POT-Creation-Date: 2018-02-19 23:49:03+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-02-20 01:09+0100\n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: Cilyan Olowen <gaknar@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr_FR\n"
+
+#: 404.php:18
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Aie&nbsp;! Cette page est introuvable."
+
+#: 404.php:21
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+"Apparemment, rien n&rsquo;a été trouvé à cette adresse. Essayez avec "
+"recherche&nbsp;?"
+
+#: archive.php:45 index.php:39 search.php:42
+msgid "Previous page"
+msgstr "Page précédente"
+
+#: archive.php:46 index.php:40 search.php:43
+msgid "Next page"
+msgstr "Page suivante"
+
+#: archive.php:47 index.php:41 search.php:44
+msgid "Page"
+msgstr "Page"
+
+#. translators: %s: post title
+#: comments.php:34
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr "Une pensée sur &ldquo;%s&rdquo;"
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:38
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s pensée sur &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s pensées sur &ldquo;%2$s&rdquo;"
+
+#: comments.php:59
+msgid "Reply"
+msgstr "Répondre"
+
+#: comments.php:68 single.php:30
+msgid "Previous"
+msgstr "Précédent"
+
+#: comments.php:69 single.php:31
+msgid "Next"
+msgstr "Suivant"
+
+#: comments.php:79
+msgid "Comments are closed."
+msgstr "Les commentaires sont fermés."
+
+#: footer.php:23
+msgid "Footer Social Links Menu"
+msgstr "Menu de liens sociaux de pied de page"
+
+#: functions.php:54
+msgid "Primary"
+msgstr "Menu principal"
+
+#: functions.php:158
+msgid "Footer 1"
+msgstr "Pied de page 1"
+
+#: functions.php:160 functions.php:172
+msgid "Add widgets here to appear in your footer."
+msgstr "Ajoutez ici des widgets qui apparaîtront dans votre pied de page."
+
+#: functions.php:170
+msgid "Footer 2"
+msgstr "Pied de page 2"
+
+#. translators: %s: Name of current post
+#: functions.php:198 template-parts/page/content-front-page-panels.php:41
+#: template-parts/page/content-front-page.php:40
+#: template-parts/post/content-audio.php:81
+#: template-parts/post/content-gallery.php:68
+#: template-parts/post/content-image.php:58
+#: template-parts/post/content-video.php:80 template-parts/post/content.php:54
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+"Continuer la lecture<span class=\"screen-reader-text\"> de &laquo;&nbsp;"
+"%s&nbsp;&raquo;</span>"
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "Aller au contenu"
+
+#: inc/customizer.php:36
+msgid "Theme Options"
+msgstr "Options du thème"
+
+#: inc/customizer.php:52
+msgid "Footer Background"
+msgstr "Arrière-plan du pied de page"
+
+#: inc/customizer.php:68
+msgid "Front Page Options"
+msgstr "Options de la page d'acceuil"
+
+#. translators: %d is the front page section number
+#: inc/customizer.php:86
+msgid "Front Page Section %d Content"
+msgstr "Contenu %d de section de page d’accueil"
+
+#: inc/customizer.php:87
+msgid ""
+"Select pages to feature in each area from the dropdowns. Add an image to a "
+"section by setting a featured image in the page editor. Empty sections will "
+"not be displayed."
+msgstr ""
+"Sélectionnez les pages à mettre en avant dans chaque zone depuis la liste "
+"déroulante. Ajoutez une image à la section en définissant une image mise en "
+"avant dans l’éditeur de page. Les sections vides ne s’afficheront pas."
+
+#: inc/icon-functions.php:37
+msgid "Please define default parameters in the form of an array."
+msgstr "Veuillez définir les paramètres par défaut sous forme d’un tableau."
+
+#: inc/icon-functions.php:42
+msgid "Please define an SVG icon filename."
+msgstr "Veuillez définir un nom de fichier d’icône SVG."
+
+#. translators: %s: post author
+#: inc/template-tags.php:19
+msgid "by %s"
+msgstr "par %s"
+
+#. translators: %s: post date
+#: inc/template-tags.php:50
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr "<span class=\"screen-reader-text\">Publié le</span> %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:64
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:83
+msgid "Categories"
+msgstr "Catégories"
+
+#: inc/template-tags.php:87
+msgid "Tags"
+msgstr "Mots-clés"
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:115
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Modifier<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: inc/template-tags.php:149
+msgid "Front Page Section %1$s Placeholder"
+msgstr "Texte indicatif de la section %1$s de la page d’accueil"
+
+#: inc/woocommerce.php:227
+msgid "View your shopping cart"
+msgstr "Voir le panier"
+
+#. translators: number of items in the mini cart.
+#: inc/woocommerce.php:229
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d objet"
+msgstr[1] "%d objects"
+
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr "Résultats de recherche pour %s"
+
+#: search.php:21 template-parts/post/content-none.php:14
+msgid "Nothing Found"
+msgstr "Rien de trouvé"
+
+#: search.php:51
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Désolé, mais rien ne correspond à votre recherche. Veuillez réessayer avec "
+"des mots différents."
+
+#: searchform.php:14
+msgctxt "label"
+msgid "Search for:"
+msgstr "Recherche pour :"
+
+#: searchform.php:16
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Recherche&hellip;"
+
+#: searchform.php:17
+msgctxt "submit button"
+msgid "Search"
+msgstr "Recherche"
+
+#: sidebar.php:13
+msgid "Blog Sidebar"
+msgstr "Colonne latérale du blog"
+
+#: single.php:30
+msgid "Previous Post"
+msgstr "Article précédent"
+
+#: single.php:31
+msgid "Next Post"
+msgstr "Article suivant"
+
+#: template-parts/footer/footer-widgets.php:14
+msgid "Footer"
+msgstr "Pied de page"
+
+#: template-parts/footer/site-info.php:10
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: template-parts/footer/site-info.php:10
+msgid "Proudly powered by %s"
+msgstr "Fièrement propulsé par %s"
+
+#: template-parts/page/content-page.php:23
+#: template-parts/post/content-audio.php:88
+#: template-parts/post/content-gallery.php:75
+#: template-parts/post/content-image.php:65
+#: template-parts/post/content-video.php:87 template-parts/post/content.php:61
+msgid "Pages:"
+msgstr "Pages&nbsp;:"
+
+#: template-parts/post/content-excerpt.php:59
+msgid "+ Read More"
+msgstr "+ Lire la suite"
+
+#: template-parts/post/content-none.php:21
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Prêt à publier votre premier article&nbsp;? <a href=\"%1$s\">Lancez-vous</"
+"a>&nbsp;!"
+
+#: template-parts/post/content-none.php:25
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Il semblerait que nous ne soyons pas en mesure de trouver votre contenu. "
+"Essayez en lançant une recherche."
+
+#. Theme Name of the plugin/theme
+msgid "t3p"
+msgstr "t3p"
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://www.cilyan.org/"
+msgstr "https://www.cilyan.org/"
+
+#. Description of the plugin/theme
+msgid "Theme for the Trail des 3 Pics website"
+msgstr "Thème pour le site web du Trail des 3 Pics"
+
+#. Author of the plugin/theme
+msgid "Cilyan Olowen"
+msgstr "Cilyan Olowen"
