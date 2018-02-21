@@ -1,8 +1,10 @@
 
 article.post {
 
-  padding-bottom: 20px;
-  border-bottom: 1px solid $gray-300;
+  &:not(.excerpt) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid $gray-300;
+  }
 
   img {
     max-width: 100%;
