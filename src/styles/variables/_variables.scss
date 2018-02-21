@@ -100,3 +100,16 @@ $h2-comments-fontsize: 1.25rem !default;
 $comments-fontsize: 0.875rem !default;
 $comments-author-fontsize: 1rem !default;
 $comments-meta-fontsize: 0.625rem !default;
+
+
+
+// Main Grid containers
+//
+// Define the maximum width of `.main-container` for different screen sizes.
+
+$main-container-max-widths: (
+  sm: 540px,  // 576px
+  md: 720px,  // 768px
+  lg: 960px,  // 992px
+  xl: 960px   // 1200px
+) !default;
