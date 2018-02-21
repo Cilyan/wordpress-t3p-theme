@@ -97,4 +97,92 @@
       @include border-left-radius(0);
     }
   }
+
+  nav.navigation.post-navigation {
+    width: 100%;
+    float: left;
+    padding: 20px 0;
+    border-bottom: 1px solid $gray-300;
+    margin-bottom: 20px;
+    min-height: 100px;
+    position: relative;
+
+    span.middle {
+      width: 1px;
+      height: 70%;
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-color: rgba(0,0,0,0.1);
+      transform: rotate(20deg);
+    }
+
+    .nav-previous, .nav-next {
+      a {
+        font-size: .8em;
+        font-weight: 700;
+        text-decoration: none;
+        color: #666666;
+
+        span {
+          font-size: 1.1em;
+          font-weight: 700;
+          display: block;
+        }
+      }
+
+      i {
+        color: rgba(0,0,0,0.6);
+        opacity: .6;
+        font-size: 24px;
+        display: block;
+        float: left;
+        height: 55px;
+        padding: 25px 3px 0;
+        position: absolute;
+        left: -18px;
+      }
+
+      img {
+        max-width: 90px;
+        height: auto;
+        float: left;
+        margin-right: 15px;
+        transition: all .2s ease-out;
+      }
+    }
+
+    .nav-previous {
+      float: left;
+      width: 50%;
+
+      a span {
+        padding-right: 20px;
+      }
+    }
+
+    .nav-next {
+      float: right;
+      width: 50%;
+      text-align: right;
+
+      i {
+        float: right;
+        right: -18px;
+        left: auto;
+      }
+
+      a span {
+        padding-left: 20px;
+      }
+
+      img {
+        float: right;
+        margin-right: 0;
+        margin-left: 15px;
+      }
+    }
+  }
 }

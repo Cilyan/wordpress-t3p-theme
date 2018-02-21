@@ -205,3 +205,114 @@ function t3p_category_transient_flusher() {
 }
 add_action( 'edit_category', 't3p_category_transient_flusher' );
 add_action( 'save_post', 't3p_category_transient_flusher' );
+
+/**
+ * Retrieves the adjacent post link.
+ *
+ * Can be either next post link or previous.
+ *
+ * @since 3.7.0
+ *
+ * @param string       $format         Link anchor format.
+ * @param string       $link           Link permalink format.
+ * @param bool         $in_same_term   Optional. Whether link should be in a same taxonomy term. Default false.
+ * @param array|string $excluded_terms Optional. Array or comma-separated list of excluded terms IDs. Default empty.
+ * @param bool         $previous       Optional. Whether to display link to previous or next post. Default true.
+ * @param string       $taxonomy       Optional. Taxonomy, if $in_same_term is true. Default 'category'.
+ * @return string The link URL of the previous or next post in relation to the current post.
+ */
+function t3p_get_adjacent_post_link($format, $link, $in_same_term = false, $excluded_terms = '', $previous = true, $taxonomy = 'category')
+{
+  if ($previous && is_attachment()) {
+    $post = get_post(get_post()->post_parent);
+  } else {
+    $post = get_adjacent_post($in_same_term, $excluded_terms, $previous, $taxonomy);
+  }
+
+  if (! $post) {
+    $output = '';
+  } else {
+    $title = $post->post_title;
+
+    if (empty($post->post_title)) {
+      $title = $previous ? __('Previous Post') : __('Next Post');
+    }
+
+    /** This filter is documented in wp-includes/post-template.php */
+    $title = apply_filters('the_title', $title, $post->ID);
+
+    $thumbnail = get_the_post_thumbnail($post, array(150, 150));
+
+    $date = mysql2date(get_option('date_format'), $post->post_date);
+    $rel = $previous ? 'prev' : 'next';
+
+    $string = '<a href="' . get_permalink($post) . '" rel="'.$rel.'">';
+    $inlink = str_replace('%title', $title, $link);
+    $inlink = str_replace('%date', $date, $inlink);
+    $inlink = str_replace('%thumbnail', $thumbnail, $inlink);
+    $inlink = $string . $inlink . '</a>';
+
+    $output = str_replace('%link', $inlink, $format);
+  }
+
+  $adjacent = $previous ? 'previous' : 'next';
+
+  /**
+   * Filters the adjacent post link.
+   *
+   * The dynamic portion of the hook name, `$adjacent`, refers to the type
+   * of adjacency, 'next' or 'previous'.
+   *
+   * @since 2.6.0
+   * @since 4.2.0 Added the `$adjacent` parameter.
+   *
+   * @param string  $output   The adjacent post link.
+   * @param string  $format   Link anchor format.
+   * @param string  $link     Link permalink format.
+   * @param WP_Post $post     The adjacent post.
+   * @param string  $adjacent Whether the post is previous or next.
+   */
+  return apply_filters("{$adjacent}_post_link", $output, $format, $link, $post, $adjacent);
+}
+
+function t3p_get_the_post_navigation( $args = array() ) {
+  $args = wp_parse_args( $args, array(
+    'prev_text'          => '%title',
+    'next_text'          => '%title',
+    'in_same_term'       => false,
+    'excluded_terms'     => '',
+    'taxonomy'           => 'category',
+    'screen_reader_text' => __( 'Post navigation' ),
+  ) );
+
+  $navigation = '';
+
+  $previous = t3p_get_adjacent_post_link(
+    '<div class="nav-previous">%link</div>',
+    $args['prev_text'],
+    $args['in_same_term'],
+    $args['excluded_terms'],
+    true, /* previous */
+    $args['taxonomy']
+  );
+
+  $next = t3p_get_adjacent_post_link(
+    '<div class="nav-next">%link</div>',
+    $args['next_text'],
+    $args['in_same_term'],
+    $args['excluded_terms'],
+    false, /* next */
+    $args['taxonomy']
+  );
+
+  // Only add markup if there's somewhere to navigate to.
+  if ( $previous || $next ) {
+      $navigation = _navigation_markup('<span class="middle">&nbsp;</span>' . $previous . $next, 'post-navigation', $args['screen_reader_text'] );
+  }
+
+  return $navigation;
+}
+
+function t3p_the_post_navigation( $args = array() ) {
+  echo t3p_get_the_post_navigation( $args );
+}
