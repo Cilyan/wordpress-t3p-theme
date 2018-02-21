@@ -1,0 +1,138 @@
+
+.comment-content,
+.comment-author,
+.comment-meta {
+  &:after, &:before {
+    content: "";
+    display: table;
+    table-layout: fixed;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+.comments-pagination {
+  border-top: 1px solid $gray-200;
+  font-size: $comments-fontsize;
+  font-weight: 800;
+  padding: 2em 0 3em;
+  text-align: center;
+
+  .icon {
+    width: 0.666666666em;
+    height: 0.666666666em;
+  }
+
+  border: 0;
+
+}
+
+#comments {
+  clear: both;
+  padding: 2em 0 0.5em;
+}
+
+.comments-title {
+  font-size: $h2-comments-fontsize;
+  margin-bottom: 1.5em;
+}
+
+.comment-list {
+  &, & .children {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li:before {
+    display: none;
+  }
+}
+
+.comment-body {
+  margin-left: 65px;
+}
+
+.comment-author {
+  font-size: $comments-author-fontsize;
+  margin-bottom: 0.4em;
+  position: relative;
+  z-index: 2;
+
+  .avatar {
+    height: 50px;
+    left: -65px;
+    position: absolute;
+    width: 50px;
+  }
+
+  .says {
+    display: none;
+  }
+}
+
+.comment-meta {
+  margin-bottom: 1.5em;
+}
+
+.comment-metadata {
+  color: $gray-600;
+  font-size: $comments-meta-fontsize;
+  font-weight: 800;
+  letter-spacing: 0.1818em;
+  text-transform: uppercase;
+
+  a {
+    color: $gray-600;
+
+    &.comment-edit-link {
+      color: $gray-900;
+      margin-left: 1em;
+    }
+  }
+}
+
+.comment-body {
+  color: $gray-800;
+  font-size: $comments-fontsize;
+  margin-bottom: 4em;
+}
+
+.comment-reply-link {
+  font-weight: 800;
+  position: relative;
+
+  .icon {
+    color: $gray-900;
+    left: -2em;
+    height: 1em;
+    position: absolute;
+    top: 0;
+    width: 1em;
+  }
+}
+
+.children .comment-author .avatar {
+  height: 30px;
+  left: -45px;
+  width: 30px;
+}
+
+.bypostauthor > .comment-body > .comment-meta > .comment-author .avatar {
+  border: 1px solid $gray-800;
+  padding: 2px;
+}
+
+.no-comments,
+.comment-awaiting-moderation {
+  color: $gray-600;
+  font-size: $comments-fontsize;
+  font-style: italic;
+}
+
+.comments-pagination {
+  margin: 2em 0 3em;
+}
