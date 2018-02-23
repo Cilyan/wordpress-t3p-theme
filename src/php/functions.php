@@ -304,6 +304,12 @@ if ( ! function_exists( 't3p_excerpt_length' ) ) {
 }
 add_filter( 'excerpt_length', 't3p_excerpt_length', 999 );
 
+/*
+ * Fix problems with <p> tags and shortcodes.
+ */
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 12);
+
 /**
  * Implement the Custom Header feature.
  */
@@ -333,6 +339,11 @@ require get_parent_theme_file_path( '/inc/class-wp-bootstrap-navwalker.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
+
+/**
+ * Shortcodes for editor.
+ */
+require get_parent_theme_file_path( '/inc/template-shortcodes.php' );
 
 // /**
 //  * Load Jetpack compatibility file.
