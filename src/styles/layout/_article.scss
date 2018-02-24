@@ -1,7 +1,29 @@
+/*--------------------------------------------------------------
+3.0 Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 article.post, article.page {
 
-  &:not(.excerpt) {
+  &:not(.excerpt):not(.full-width) {
     padding-bottom: 20px;
     border-bottom: 1px solid $gray-300;
   }
@@ -134,5 +156,59 @@ article.post, article.page {
     right: 0;
     position: absolute;
     top: 100px;
+  }
+}
+
+// Style for shortcodes
+article {
+  .fw-container {
+    width: 100%;
+  }
+
+  .with-background-cover {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+  }
+
+  .container.block-shortcode {
+    .col-sm {
+      padding-top: 20px;
+
+      &:last-child {
+        padding-bottom: 20px;
+      }
+
+      @include media-breakpoint-up("sm") {
+        padding-bottom: 20px;
+      }
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .rounded {
+    background-color: $white;
+    border-radius: 15px;
+    padding: 15px;
+    margin: {
+      left: 0;
+      right: 0;
+    }
+
+    @include media-breakpoint-up("sm") {
+      margin: {
+        left: 20px;
+        right: 20px;
+      }
+    }
+
+    & + .rounded {
+      margin-top: 20px;
+    }
   }
 }
