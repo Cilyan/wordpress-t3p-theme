@@ -4,6 +4,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+let hasSourceMaps = true;
+
 module.exports = {
   entry: {
     "main": [
@@ -19,6 +21,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   context: path.join(__dirname, 'src'),
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -26,7 +29,12 @@ module.exports = {
         use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
-            'css-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: hasSourceMaps
+              }
+            },
             {
               loader: 'postcss-loader', // Run post css actions
               options: {
@@ -35,10 +43,16 @@ module.exports = {
                     require('precss'),
                     require('autoprefixer')
                   ];
-                }
+                },
+                sourceMap: hasSourceMaps
               }
             },
-            'sass-loader'
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: hasSourceMaps
+              }
+            }
           ]
         })
       },
