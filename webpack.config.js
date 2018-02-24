@@ -65,5 +65,8 @@ module.exports = {
         { context: 'php', from:'**/*'},
         { context: 'static', from:'**/*'},
     ])
-  ]
+  ],
+  externals: {
+    jquery: 'jQuery'
+  }
 };
