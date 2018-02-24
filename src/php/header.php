@@ -28,7 +28,13 @@
 
   <?php get_template_part( 'template-parts/navigation/navigation', 'top'); ?>
 
-  <?php get_template_part( 'template-parts/header/header', 'image'); ?>
+  <?php
+    if (is_front_page()) {
+      get_template_part( 'template-parts/header/header', 'video');
+    }
+    else {
+      get_template_part( 'template-parts/header/header', 'image');
+    } ?>
 
   <a href="javascript:" id="totop"><span><?php echo t3p_get_svg( array( 'icon' => 'chevron-up' ) ); ?></span></a>
 

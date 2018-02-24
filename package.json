@@ -28,7 +28,8 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.3",
-    "typeplate-starter-kit": "^3.0.2"
+    "typeplate-starter-kit": "^3.0.2",
+    "youtube-iframe": "^1.0.3"
   },
   "browserslist": [
     "> 1%",

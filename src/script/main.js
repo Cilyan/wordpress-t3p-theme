@@ -1,3 +1,4 @@
 import 'bootstrap';
 import './navbar';
-import './totop.js';
+import './totop';
+import './video';
