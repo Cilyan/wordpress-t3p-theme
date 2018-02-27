@@ -14,6 +14,9 @@ module.exports = {
     ],
     "customizer": [
       "./script/customizer.js"
+    ],
+    "frontpage": [
+      "./script/frontpage.js"
     ]
   },
   output: {
