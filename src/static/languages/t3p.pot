@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-02-19 23:49:03+00:00\n"
+"POT-Creation-Date: 2018-02-28 01:09:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -50,11 +50,11 @@ msgstr[1] ""
 msgid "Reply"
 msgstr ""
 
-#: comments.php:68 single.php:30
+#: comments.php:68
 msgid "Previous"
 msgstr ""
 
-#: comments.php:69 single.php:31
+#: comments.php:69
 msgid "Next"
 msgstr ""
 
@@ -83,7 +83,7 @@ msgid "Footer 2"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: functions.php:198 template-parts/page/content-front-page-panels.php:41
+#: functions.php:202 template-parts/page/content-front-page-panels.php:41
 #: template-parts/page/content-front-page.php:40
 #: template-parts/post/content-audio.php:81
 #: template-parts/post/content-gallery.php:68
@@ -104,16 +104,87 @@ msgstr ""
 msgid "Footer Background"
 msgstr ""
 
-#: inc/customizer.php:68
+#: inc/customizer.php:62
+msgid "Front Page Video"
+msgstr ""
+
+#: inc/customizer.php:100
+msgid "Video ID"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid ""
+"You can find the video ID in the URL of the video: https://www.youtube.com/"
+"watch?v=<b>VIDEO_ID</b> or https://www.youtube.com/v/<b>VIDEO_ID</b>"
+msgstr ""
+
+#: inc/customizer.php:113
+msgid "Start"
+msgstr ""
+
+#: inc/customizer.php:114
+msgid "Allows to start the video at a specific time (in seconds)"
+msgstr ""
+
+#: inc/customizer.php:126
+msgid "End"
+msgstr ""
+
+#: inc/customizer.php:127
+msgid ""
+"Allows to stop the video at a specific time (in seconds), 0 to play till the "
+"end"
+msgstr ""
+
+#: inc/customizer.php:139
+msgid "Recommended Quality"
+msgstr ""
+
+#: inc/customizer.php:140
+msgid ""
+"The video quality suggested to the YouTube player. The player may decide "
+"otherwise. Recommended is \"Automatic\", that way the player will select the "
+"best suitable option depending on the client."
+msgstr ""
+
+#: inc/customizer.php:144
+msgid "Automatic"
+msgstr ""
+
+#: inc/customizer.php:145
+msgid "Small"
+msgstr ""
+
+#: inc/customizer.php:146
+msgid "Medium"
+msgstr ""
+
+#: inc/customizer.php:147
+msgid "Large"
+msgstr ""
+
+#: inc/customizer.php:148
+msgid "720p"
+msgstr ""
+
+#: inc/customizer.php:149
+msgid "1080p"
+msgstr ""
+
+#: inc/customizer.php:150
+msgid "High Resolution"
+msgstr ""
+
+#: inc/customizer.php:164
 msgid "Front Page Options"
 msgstr ""
 
 #. translators: %d is the front page section number
-#: inc/customizer.php:86
+#: inc/customizer.php:182
 msgid "Front Page Section %d Content"
 msgstr ""
 
-#: inc/customizer.php:87
+#: inc/customizer.php:183
 msgid ""
 "Select pages to feature in each area from the dropdowns. Add an image to a "
 "section by setting a featured image in the page editor. Empty sections will "
@@ -160,6 +231,18 @@ msgstr ""
 msgid "Front Page Section %1$s Placeholder"
 msgstr ""
 
+#: inc/template-tags.php:238 single.php:25
+msgid "Previous Post"
+msgstr ""
+
+#: inc/template-tags.php:238 single.php:26
+msgid "Next Post"
+msgstr ""
+
+#: inc/template-tags.php:285
+msgid "Post navigation"
+msgstr ""
+
 #: inc/woocommerce.php:227
 msgid "View your shopping cart"
 msgstr ""
@@ -202,14 +285,6 @@ msgstr ""
 
 #: sidebar.php:13
 msgid "Blog Sidebar"
-msgstr ""
-
-#: single.php:30
-msgid "Previous Post"
-msgstr ""
-
-#: single.php:31
-msgid "Next Post"
 msgstr ""
 
 #: template-parts/footer/footer-widgets.php:14
@@ -264,4 +339,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Cilyan Olowen"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width Page"
 msgstr ""
