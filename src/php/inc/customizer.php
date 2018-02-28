@@ -56,6 +56,102 @@ function t3p_customize_register( $wp_customize ) {
     )
   );
 
+  // Masthead video background properties
+  $wp_customize->add_section(
+    'front_page_video', array(
+      'title'    => __( 'Front Page Video', 't3p' ),
+      'priority' => 131, // Before Additional CSS.
+    )
+  );
+
+  $wp_customize->add_setting(
+    'front_page_video_id',
+    array(
+      'default' => '',
+    )
+  );
+
+  $wp_customize->add_setting(
+    'front_page_video_start',
+    array(
+      'default' => '',
+      'sanitize_callback' => 'absint',
+    )
+  );
+
+  $wp_customize->add_setting(
+    'front_page_video_end',
+    array(
+      'default' => '',
+      'sanitize_callback' => 'absint',
+    )
+  );
+
+  $wp_customize->add_setting(
+    'front_page_video_quality',
+    array(
+      'default' => 'default'
+    )
+  );
+
+  $wp_customize->add_control(
+    'front_page_video_id',
+    array(
+      'label' => __('Video ID', 't3p'),
+      'description' => __('You can find the video ID in the URL of the video: https://www.youtube.com/watch?v=<b>VIDEO_ID</b> or https://www.youtube.com/v/<b>VIDEO_ID</b>', 't3p'),
+      'section' => 'front_page_video',
+      'type' => 'text', // Can be either text, email, url, number, hidden, or date
+      'input_attrs' => array(
+        'placeholder' => '6iiA64ElaO0',
+      )
+    )
+  );
+
+  $wp_customize->add_control(
+    'front_page_video_start',
+    array(
+      'label' => __('Start', 't3p'),
+      'description' => esc_html__('Allows to start the video at a specific time (in seconds)', 't3p'),
+      'section' => 'front_page_video',
+      'type' => 'number', // Can be either text, email, url, number, hidden, or date
+      'input_attrs' => array(
+        'placeholder' => '0',
+      )
+    )
+  );
+
+  $wp_customize->add_control(
+    'front_page_video_end',
+    array(
+      'label' => __('End', 't3p'),
+      'description' => esc_html__('Allows to stop the video at a specific time (in seconds), 0 to play till the end', 't3p'),
+      'section' => 'front_page_video',
+      'type' => 'number', // Can be either text, email, url, number, hidden, or date
+      'input_attrs' => array(
+        'placeholder' => '0',
+      )
+    )
+  );
+
+  $wp_customize->add_control(
+    'front_page_video_quality',
+    array(
+      'label' => __('Recommended Quality', 't3p'),
+      'description' => esc_html__('The video quality suggested to the YouTube player. The player may decide otherwise. Recommended is "Automatic", that way the player will select the best suitable option depending on the client.', 't3p'),
+      'section' => 'front_page_video',
+      'type' => 'select',
+      'choices' => array(
+        'default' => __('Automatic', 't3p'),
+        'small' => __('Small', 't3p'),
+        'medium' => __('Medium', 't3p'),
+        'large' => __('Large', 't3p'),
+        'hd720' => __('720p', 't3p'),
+        'hd1080' => __('1080p', 't3p'),
+        'highres' => __('High Resolution', 't3p'),
+      )
+    )
+  );
+
   /**
    * Filter number of front page sections in t3p.
    *
@@ -66,7 +162,7 @@ function t3p_customize_register( $wp_customize ) {
   $wp_customize->add_section(
     'front_page_options', array(
       'title'    => __( 'Front Page Options', 't3p' ),
-      'priority' => 131, // Before Additional CSS.
+      'priority' => 132, // Before Additional CSS.
     )
   );
 
@@ -84,7 +180,7 @@ function t3p_customize_register( $wp_customize ) {
       'panel_' . $i, array(
         /* translators: %d is the front page section number */
         'label'           => sprintf( __( 'Front Page Section %d Content', 't3p' ), $i ),
-        'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'twentyseventeen' ) ),
+        'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 't3p' ) ),
         'section'         => 'front_page_options',
         'type'            => 'dropdown-pages',
         'allow_addition'  => true,

@@ -21,7 +21,7 @@ function vidRescale(){
 }
 
 YouTubeIframeLoader.load(function(YT) {
-  if ($(window).width() > 768) {
+  if (($(window).width() > 768) && masthead_video_props.videoId !== '') {
     var playerDefaults = {
       autoplay: 0,
       autohide: 1,
@@ -41,11 +41,14 @@ YouTubeIframeLoader.load(function(YT) {
 
 function onPlayerReady(){
   var video = {
-    'videoId': 'o--eZThXHYU',
-    'startSeconds': 79,
-    'endSeconds': 259,
-    'suggestedQuality': 'hd720'
+    'videoId': masthead_video_props.videoId,
+    'startSeconds': parseInt(masthead_video_props.startSeconds,10),
+    'suggestedQuality': masthead_video_props.suggestedQuality
   };
+  var end = parseInt(masthead_video_props.endSeconds, 10);
+  if (end != 0) {
+    video.endSeconds = end;
+  }
   tv.loadVideoById(video);
   tv.mute();
 }
