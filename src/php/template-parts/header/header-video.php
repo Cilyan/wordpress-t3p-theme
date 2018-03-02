@@ -12,6 +12,12 @@
     <div class="screen mute" id="tv"></div>
   </div>
   <div class="cover">
+    <div class="partners">
+      <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-nb.png"; ?>" alt="">
+      <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-is.png"; ?>" alt="">
+      <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-cd31.png"; ?>" alt="">
+      <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-oc.png"; ?>" alt="">
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
