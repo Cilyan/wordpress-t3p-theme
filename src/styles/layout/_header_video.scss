@@ -54,4 +54,33 @@ header.masthead-video  {
       }
     }
   }
+
+  .container {
+    font-size: 1.5rem;
+    margin-top: 80px;
+    color: white;
+    text-shadow: 1px 1px 2px $black;
+
+    h1 { font-size: $h1-fontsize * 1.2;}
+    h2 { font-size: $h2-fontsize * 1.2;}
+    h3 { font-size: $h3-fontsize * 1.2;}
+    h4 { font-size: $h4-fontsize * 1.2;}
+    h5 { font-size: $h5-fontsize * 1.2;}
+    h6 { font-size: $h6-fontsize * 1.2;}
+
+    p {
+      margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up("md") {
+      font-size: 2rem;
+
+      h1 { font-size: $h1-fontsize * 2;}
+      h2 { font-size: $h2-fontsize * 2;}
+      h3 { font-size: $h3-fontsize * 2;}
+      h4 { font-size: $h4-fontsize * 2;}
+      h5 { font-size: $h5-fontsize * 2;}
+      h6 { font-size: $h6-fontsize * 2;}
+    }
+  }
 }

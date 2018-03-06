@@ -18,20 +18,14 @@
       <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-cd31.png"; ?>" alt="">
       <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-oc.png"; ?>" alt="">
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-            <?php
-            $description = get_bloginfo( 'description', 'display' );
-            if ( $description || is_customize_preview() ) : ?>
-            <span class="subheading site-description"><?php echo $description; /* WPCS: xss ok. */ ?></span>
-            <?php
-            endif; ?>
-          </div>
-        </div>
-      </div>
+    <div class="container main-container">
+      <?php
+        $header_content_post = get_post( get_theme_mod( 'front_page_header_content' ) );
+        $header_content_post_content = $header_content_post->post_content;
+        $header_content_post_content = apply_filters('the_content', $header_content_post_content);
+        $header_content_post_content = str_replace(']]>', ']]&gt;', $header_content_post_content);
+        echo $header_content_post_content;
+       ?>
     </div>
   </div>
 </header>

@@ -94,6 +94,15 @@ function t3p_customize_register( $wp_customize ) {
     )
   );
 
+  $wp_customize->add_setting(
+    'front_page_header_content',
+    array(
+      'default'           => false,
+      'sanitize_callback' => 'absint',
+      //'transport'         => 'postMessage',
+    )
+  );
+
   $wp_customize->add_control(
     'front_page_video_id',
     array(
@@ -149,6 +158,19 @@ function t3p_customize_register( $wp_customize ) {
         'hd1080' => __('1080p', 't3p'),
         'highres' => __('High Resolution', 't3p'),
       )
+    )
+  );
+
+  $wp_customize->add_control(
+    'front_page_header_content',
+    array(
+      /* translators: %d is the front page section number */
+      'label'           => __( 'Front Page Header Content', 't3p' ),
+      'description'     => __( 'Page that will be used as the content displayed over the header image/video', 't3p' ),
+      'section'         => 'front_page_video',
+      'type'            => 'dropdown-pages',
+      'allow_addition'  => true,
+      //'active_callback' => 't3p_is_static_front_page',
     )
   );
 
