@@ -12,6 +12,10 @@ module.exports = {
       "./script/main.js",
       "./styles/style.scss"
     ],
+    "admin-trail": [
+      "./script/trail.js",
+      "./styles/admin/trail.scss"
+    ],
     "customizer": [
       "./script/customizer.js"
     ],
@@ -77,13 +81,22 @@ module.exports = {
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default']
     }),
-    new ExtractTextPlugin("style.css"),
+    new ExtractTextPlugin({
+      filename: (getPath) => {
+        var entry = getPath('[name]');
+        return {
+          'main': 'style.css',
+          'admin-trail': 'assets/styles/admin-trail.css'
+        }[entry];
+      },
+    }),
     new CopyWebpackPlugin([
         { context: 'php', from:'**/*'},
         { context: 'static', from:'**/*'},
     ])
   ],
   externals: {
-    jquery: 'jQuery'
+    jquery: 'jQuery',
+    wordpress: 'wp',
   }
 };

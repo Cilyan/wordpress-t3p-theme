@@ -332,6 +332,11 @@ remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 12);
 
 /**
+ * Custom Post Type for Trails
+ */
+require get_parent_theme_file_path( '/inc/custom-post-trail.php' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_parent_theme_file_path( '/inc/custom-header.php' );

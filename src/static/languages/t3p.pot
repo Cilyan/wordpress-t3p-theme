@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-02-28 01:09:35+00:00\n"
+"POT-Creation-Date: 2018-03-11 20:37:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -96,6 +96,195 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#: inc/custom-post-trail.php:7
+msgctxt "Post Type General Name"
+msgid "Trails"
+msgstr ""
+
+#: inc/custom-post-trail.php:8
+msgctxt "Post Type Singular Name"
+msgid "Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:9
+msgid "Trails"
+msgstr ""
+
+#: inc/custom-post-trail.php:10 inc/custom-post-trail.php:38
+msgid "Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:11
+msgid "Trail Archives"
+msgstr ""
+
+#: inc/custom-post-trail.php:12
+msgid "Trail Attributes"
+msgstr ""
+
+#: inc/custom-post-trail.php:13
+msgid "Parent Trail:"
+msgstr ""
+
+#: inc/custom-post-trail.php:14
+msgid "All Trails"
+msgstr ""
+
+#: inc/custom-post-trail.php:15
+msgid "Add New Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:16
+msgid "Add New"
+msgstr ""
+
+#: inc/custom-post-trail.php:17
+msgid "New Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:18
+msgid "Edit Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:19
+msgid "Update Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:20
+msgid "View Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:21
+msgid "View Trails"
+msgstr ""
+
+#: inc/custom-post-trail.php:22
+msgid "Search Trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:23
+msgid "Trail Not found"
+msgstr ""
+
+#: inc/custom-post-trail.php:24
+msgid "Trail Not found in Trash"
+msgstr ""
+
+#: inc/custom-post-trail.php:25
+msgid "Insert into trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:26
+msgid "Uploaded to this trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:27
+msgid "Trails list"
+msgstr ""
+
+#: inc/custom-post-trail.php:28
+msgid "Trails list navigation"
+msgstr ""
+
+#: inc/custom-post-trail.php:29
+msgid "Filter trails list"
+msgstr ""
+
+#: inc/custom-post-trail.php:39
+msgid "A special page to describe a trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:68
+msgid "Trail Options"
+msgstr ""
+
+#: inc/custom-post-trail.php:91
+msgid "Icon"
+msgstr ""
+
+#: inc/custom-post-trail.php:98 inc/custom-post-trail.php:229
+msgid "Set trail icon"
+msgstr ""
+
+#: inc/custom-post-trail.php:103
+msgid "Click on icon to change or update."
+msgstr ""
+
+#: inc/custom-post-trail.php:106
+msgid "Remove this image"
+msgstr ""
+
+#: inc/custom-post-trail.php:111
+msgid "Length of the trail"
+msgstr ""
+
+#: inc/custom-post-trail.php:113
+msgid "50 km"
+msgstr ""
+
+#: inc/custom-post-trail.php:116
+msgid "Vertical Climb (D+)"
+msgstr ""
+
+#: inc/custom-post-trail.php:118 inc/custom-post-trail.php:123
+msgid "1500 m"
+msgstr ""
+
+#: inc/custom-post-trail.php:121
+msgid "Vertical Drop (D-)"
+msgstr ""
+
+#: inc/custom-post-trail.php:126
+msgid "ITRA Points"
+msgstr ""
+
+#: inc/custom-post-trail.php:128
+msgid "4 points"
+msgstr ""
+
+#: inc/custom-post-trail.php:131
+msgid "Reduced Price"
+msgstr ""
+
+#: inc/custom-post-trail.php:133
+msgid "20 £"
+msgstr ""
+
+#: inc/custom-post-trail.php:136
+msgid "Full Price"
+msgstr ""
+
+#: inc/custom-post-trail.php:138
+msgid "25 £"
+msgstr ""
+
+#: inc/custom-post-trail.php:141
+msgid "Display on front page"
+msgstr ""
+
+#: inc/custom-post-trail.php:143
+msgid ""
+"If checked, the trail will be displayed as a nice block on the front page"
+msgstr ""
+
+#: inc/custom-post-trail.php:146
+msgid "Display in price list"
+msgstr ""
+
+#: inc/custom-post-trail.php:148
+msgid ""
+"If checked, the trail will be present in the list next to the \"register\" "
+"button"
+msgstr ""
+
+#: inc/custom-post-trail.php:227
+msgid "Choose or Upload an Icon"
+msgstr ""
+
+#: inc/custom-post-trail.php:228
+msgid "Use this icon"
+msgstr ""
+
 #: inc/customizer.php:36
 msgid "Theme Options"
 msgstr ""
@@ -108,83 +297,93 @@ msgstr ""
 msgid "Front Page Video"
 msgstr ""
 
-#: inc/customizer.php:100
+#: inc/customizer.php:109
 msgid "Video ID"
 msgstr ""
 
-#: inc/customizer.php:101
+#: inc/customizer.php:110
 msgid ""
 "You can find the video ID in the URL of the video: https://www.youtube.com/"
 "watch?v=<b>VIDEO_ID</b> or https://www.youtube.com/v/<b>VIDEO_ID</b>"
 msgstr ""
 
-#: inc/customizer.php:113
+#: inc/customizer.php:122
 msgid "Start"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:123
 msgid "Allows to start the video at a specific time (in seconds)"
 msgstr ""
 
-#: inc/customizer.php:126
+#: inc/customizer.php:135
 msgid "End"
 msgstr ""
 
-#: inc/customizer.php:127
+#: inc/customizer.php:136
 msgid ""
 "Allows to stop the video at a specific time (in seconds), 0 to play till the "
 "end"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:148
 msgid "Recommended Quality"
 msgstr ""
 
-#: inc/customizer.php:140
+#: inc/customizer.php:149
 msgid ""
 "The video quality suggested to the YouTube player. The player may decide "
 "otherwise. Recommended is \"Automatic\", that way the player will select the "
 "best suitable option depending on the client."
 msgstr ""
 
-#: inc/customizer.php:144
+#: inc/customizer.php:153
 msgid "Automatic"
 msgstr ""
 
-#: inc/customizer.php:145
+#: inc/customizer.php:154
 msgid "Small"
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:155
 msgid "Medium"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:156
 msgid "Large"
 msgstr ""
 
-#: inc/customizer.php:148
+#: inc/customizer.php:157
 msgid "720p"
 msgstr ""
 
-#: inc/customizer.php:149
+#: inc/customizer.php:158
 msgid "1080p"
 msgstr ""
 
-#: inc/customizer.php:150
+#: inc/customizer.php:159
 msgid "High Resolution"
 msgstr ""
 
-#: inc/customizer.php:164
+#. translators: %d is the front page section number
+#: inc/customizer.php:168
+msgid "Front Page Header Content"
+msgstr ""
+
+#: inc/customizer.php:169
+msgid ""
+"Page that will be used as the content displayed over the header image/video"
+msgstr ""
+
+#: inc/customizer.php:186
 msgid "Front Page Options"
 msgstr ""
 
 #. translators: %d is the front page section number
-#: inc/customizer.php:182
+#: inc/customizer.php:204
 msgid "Front Page Section %d Content"
 msgstr ""
 
-#: inc/customizer.php:183
+#: inc/customizer.php:205
 msgid ""
 "Select pages to feature in each area from the dropdowns. Add an image to a "
 "section by setting a featured image in the page editor. Empty sections will "
