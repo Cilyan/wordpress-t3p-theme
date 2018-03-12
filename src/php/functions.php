@@ -233,6 +233,13 @@ function t3p_scripts() {
 
     wp_localize_script( 't3p-frontpage', 'masthead_video_props', $masthead_video_props);
 
+    $race_start = new DateTime('2018-07-22 07:30', new DateTimeZone('Europe/Paris'));
+    $countdown_props = array(
+      'start_timestamp' => $race_start->getTimestamp() * 1000,
+    );
+
+    wp_localize_script( 't3p-frontpage', 'countdown_props', $countdown_props);
+
     wp_enqueue_script('t3p-frontpage');
   }
 }

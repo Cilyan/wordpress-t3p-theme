@@ -1,50 +1,50 @@
 
 #logo-overlay {
-    display: none;
+  display: none;
 
-    // fixed-top
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: $zindex-fixed;
+  // fixed-top
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: $zindex-fixed;
 
-    @include wp-admin-bar-adjust;
+  @include wp-admin-bar-adjust;
 
-    @include media-breakpoint-up("lg") {
-        display: block;
-        position: absolute;
-        z-index: 1031;
-        pointer-events: none;
-        .logo-overlay-block {
-            pointer-events: auto;
-            background-color: $secondary;
-            color: $white;
-            display: inline-block;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            margin-right: 1rem;
-            font-size: 1.25rem;
-            line-height: inherit;
-            white-space: nowrap;
-            text-align: center;
-            font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
-            h3 {
-                text-transform: uppercase;
-                font-weight: 700;
-                margin-bottom: 0.3rem;
-                font-size: 1.75rem;
-                color: $white;
-            }
-            p {
-                font-style: italic;
-                padding: 0;
-                margin: 0;
-            }
-        }
+  @include media-breakpoint-up("lg") {
+    display: block;
+    position: absolute;
+    z-index: 1031;
+    pointer-events: none;
+    .logo-overlay-block {
+      pointer-events: auto;
+      background-color: $secondary;
+      color: $white;
+      display: inline-block;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+      line-height: inherit;
+      white-space: nowrap;
+      text-align: center;
+      font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
+      h3 {
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 0.3rem;
+        font-size: 1.75rem;
+        color: $white;
+      }
+      p {
+        font-style: italic;
+        padding: 0;
+        margin: 0;
+      }
     }
+  }
 }
 
 
@@ -60,6 +60,7 @@ header.masthead {
     size: cover;
   }
   height: 85vh;
+
   .page-heading,
   .post-heading,
   .site-heading {

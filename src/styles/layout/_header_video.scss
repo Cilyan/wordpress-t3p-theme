@@ -1,5 +1,17 @@
 header.masthead-video  {
   position: relative;
+  background: {
+    repeat: no-repeat;
+    color: $gray-600;
+    attachment: scroll;
+    position: center center;
+    size: cover;
+  }
+  height: 70vh;
+
+  @include media-breakpoint-up("md") {
+    height: 85vh;
+  }
 
   .tv, .cover {
     position: absolute;
@@ -56,20 +68,31 @@ header.masthead-video  {
   }
 
   .container {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-top: 80px;
-    color: white;
+    color: $white;
     text-shadow: 1px 1px 2px $black;
 
-    h1 { font-size: $h1-fontsize * 1.2;}
-    h2 { font-size: $h2-fontsize * 1.2;}
-    h3 { font-size: $h3-fontsize * 1.2;}
-    h4 { font-size: $h4-fontsize * 1.2;}
-    h5 { font-size: $h5-fontsize * 1.2;}
-    h6 { font-size: $h6-fontsize * 1.2;}
+    h1 { font-size: $h1-fontsize * 1.0;}
+    h2 { font-size: $h2-fontsize * 1.0;}
+    h3 { font-size: $h3-fontsize * 1.0;}
+    h4 { font-size: $h4-fontsize * 1.0;}
+    h5 { font-size: $h5-fontsize * 1.0;}
+    h6 { font-size: $h6-fontsize * 1.0;}
 
     p {
       margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up("sm") {
+      font-size: 1.4rem;
+
+      h1 { font-size: $h1-fontsize * 1.4;}
+      h2 { font-size: $h2-fontsize * 1.4;}
+      h3 { font-size: $h3-fontsize * 1.4;}
+      h4 { font-size: $h4-fontsize * 1.4;}
+      h5 { font-size: $h5-fontsize * 1.4;}
+      h6 { font-size: $h6-fontsize * 1.4;}
     }
 
     @include media-breakpoint-up("md") {
@@ -81,6 +104,121 @@ header.masthead-video  {
       h4 { font-size: $h4-fontsize * 2;}
       h5 { font-size: $h5-fontsize * 2;}
       h6 { font-size: $h6-fontsize * 2;}
+    }
+  }
+}
+
+.header-counter {
+  background-color: $secondary;
+  display: flex;
+  align-items: center;
+
+  height: 30vh;
+
+  @include media-breakpoint-up("md") {
+    height: 15vh;
+  }
+
+  .header-counter-content {
+    @include make-row();
+
+    .counter {
+      @include make-col-ready();
+
+      @include media-breakpoint-up("md") {
+        @include make-col(7, 12);
+      }
+
+      justify-content: center;
+      align-items: center;
+
+      p {
+        color: $white;
+        margin: 0;
+        line-height: 1.0;
+        text-align: center;
+
+        &.counter-label {
+          text-transform: uppercase;
+          font-size: 1.0rem;
+        }
+
+        &.counter-separator {
+          margin-bottom: 0.8rem;
+        }
+      }
+
+      #t3p-counter {
+        text-align: center;
+        p {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 2rem;
+          text-align: center;
+
+          &.counter-element-days {
+            margin-right: 0.3em;
+          }
+
+          span.counter-element-label {
+            display: block;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            text-align: center;
+          }
+        }
+      }
+
+      @include media-breakpoint-up("md") {
+        p {
+          &.counter-label {
+            font-size: 1.2rem;
+          }
+          &.counter-separator {
+            margin-bottom: 1rem;
+          }
+        }
+        #t3p-counter p {
+          font-size: 3rem;
+
+          span.counter-element-label {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .register {
+      @include make-col-ready();
+
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include media-breakpoint-up("md") {
+        margin-top: 0;
+        @include make-col(5, 12);
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        background-color: $primary;
+        color: $white;
+        padding: 2px 40px 2px 40px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 2em;
+        vertical-align: middle;
+        white-space: nowrap;
+
+        font-size: 1.5rem;
+
+        @include media-breakpoint-up("md") {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }

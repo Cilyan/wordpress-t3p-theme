@@ -7,7 +7,7 @@
 
 ?>
 <!-- Page Header -->
-<header class="masthead masthead-video" style="background-image: url('<?php header_image(); ?>')">
+<header class="masthead-video" style="background-image: url('<?php header_image(); ?>')">
   <div class="tv">
     <div class="screen mute" id="tv"></div>
   </div>
@@ -29,3 +29,23 @@
     </div>
   </div>
 </header>
+<section class="header-counter">
+  <div class="container main-container">
+    <div class="header-counter-content">
+      <div class="counter">
+        <p class="counter-label"><?php _e('Start in', 't3p'); ?></p>
+        <div id="t3p-counter">
+          <p class="counter-element-days"><span id="t3p-counter-days">00</span><span class="counter-element-label"><?php _e('days', 't3p'); ?></span></p>
+          <p><span id="t3p-counter-hours">00</span><span class="counter-element-label"><?php _e('hours', 't3p'); ?></span></p>
+          <p class="counter-separator">:</p>
+          <p><span id="t3p-counter-minutes">00</span><span class="counter-element-label"><?php _e('minutes', 't3p'); ?></span></p>
+          <p class="counter-separator">:</p>
+          <p><span id="t3p-counter-seconds">00</span><span class="counter-element-label"><?php _e('seconds', 't3p'); ?></span></p>
+        </div>
+      </div>
+      <div class="register">
+        <a href=""><?php _e('Register Now', 't3p'); ?></a>
+      </div>
+    </div>
+  </div>
+</section>
