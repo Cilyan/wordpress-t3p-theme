@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-03-11 20:37:31+00:00\n"
+"POT-Creation-Date: 2018-03-12 23:26:59+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,6 +84,7 @@ msgstr ""
 
 #. translators: %s: Name of current post
 #: functions.php:202 template-parts/page/content-front-page-panels.php:41
+#: template-parts/page/content-front-page-trails.php:41
 #: template-parts/page/content-front-page.php:40
 #: template-parts/post/content-audio.php:81
 #: template-parts/post/content-gallery.php:68
@@ -202,7 +203,7 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: inc/custom-post-trail.php:98 inc/custom-post-trail.php:229
+#: inc/custom-post-trail.php:98 inc/custom-post-trail.php:240
 msgid "Set trail icon"
 msgstr ""
 
@@ -277,11 +278,21 @@ msgid ""
 "button"
 msgstr ""
 
-#: inc/custom-post-trail.php:227
+#: inc/custom-post-trail.php:151
+msgid "Priority"
+msgstr ""
+
+#: inc/custom-post-trail.php:154
+msgid ""
+"This value orders the trails on the front page. Lower values are presented "
+"first."
+msgstr ""
+
+#: inc/custom-post-trail.php:238
 msgid "Choose or Upload an Icon"
 msgstr ""
 
-#: inc/custom-post-trail.php:228
+#: inc/custom-post-trail.php:239
 msgid "Use this icon"
 msgstr ""
 
@@ -496,6 +507,30 @@ msgstr ""
 
 #: template-parts/footer/site-info.php:10
 msgid "Proudly powered by %s"
+msgstr ""
+
+#: template-parts/header/header-video.php:36
+msgid "Start in"
+msgstr ""
+
+#: template-parts/header/header-video.php:38
+msgid "days"
+msgstr ""
+
+#: template-parts/header/header-video.php:39
+msgid "hours"
+msgstr ""
+
+#: template-parts/header/header-video.php:41
+msgid "minutes"
+msgstr ""
+
+#: template-parts/header/header-video.php:43
+msgid "seconds"
+msgstr ""
+
+#: template-parts/header/header-video.php:47
+msgid "Register Now"
 msgstr ""
 
 #: template-parts/page/content-page.php:23
