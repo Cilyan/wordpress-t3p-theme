@@ -136,12 +136,18 @@ function t3p_front_page_section( $partial = null, $id = 0 ) {
   }
 
   global $post; // Modify the global post object before setting up post data.
-  if ( get_theme_mod( 'panel_' . $id ) ) {
-    $post = get_post( get_theme_mod( 'panel_' . $id ) );
+  $panel_format = get_theme_mod( 'panel_format_' . $id );
+  $panel_id = get_theme_mod( 'panel_' . $id );
+  if ( $panel_id && $panel_format && $panel_format !== 'none') {
+    $post = get_post( $panel_id );
     setup_postdata( $post );
     set_query_var( 'panel', $id );
 
-    get_template_part( 'template-parts/page/content', 'front-page-panels' );
+    if ($panel_format === 'single') {
+      $panel_format = '';
+    }
+
+    get_template_part( 'template-parts/page/front-page/content-front-page-panels', $panel_format);
 
     wp_reset_postdata();
   } elseif ( is_customize_preview() ) {
@@ -315,4 +321,16 @@ function t3p_get_the_post_navigation( $args = array() ) {
 
 function t3p_the_post_navigation( $args = array() ) {
   echo t3p_get_the_post_navigation( $args );
+}
+
+function t3p_the_trail_meta($meta, $icon) {
+  $the_meta = get_post_meta(get_the_ID(), 'trail-' . $meta, true);
+  if ($the_meta) :
+?>
+    <div class="<?php echo "meta_".$meta." meta_element"; ?>">
+      <span class="meta_icon"><?php echo t3p_get_svg( array( 'icon' => $icon ) ); ?></span>
+      <?php echo $the_meta; ?>
+    </div>
+<?php
+  endif;
 }

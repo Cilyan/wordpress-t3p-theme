@@ -1,5 +1,20 @@
 .front-page {
 
+  article.front-article {
+    width: 100%;
+    background: {
+      repeat: no-repeat;
+      attachment: scroll;
+      position: center center;
+      size: cover;
+    }
+
+    .entry-content {
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+  }
+
   section {
     width: 100%;
     background: {
@@ -16,6 +31,15 @@
 
     .entry-content {
       padding-bottom: 40px;
+    }
+
+    &.front-panel-separator {
+      background-attachment: scroll;
+
+      .entry-content {
+        padding-top: 40px;
+        color: $white;
+      }
     }
   }
 
@@ -114,6 +138,109 @@
           }
         }
       }
+    }
+  }
+
+  .trails-showcase {
+
+    @include make-row();
+    justify-content: space-around;
+
+    article.trail-showcase {
+      @include make-col-ready();
+
+      min-height: 470px;
+      padding: {
+        bottom: 40px;
+      }
+
+      @include media-breakpoint-up("md") {
+        @include make-col(6, 12);
+      }
+
+      @include media-breakpoint-up("lg") {
+        @include make-col(5, 12);
+      }
+
+      .trail-icon-container {
+        width: 128px;
+        height: 128px;
+        padding: 0;
+        z-index: $zindex-dropdown - 1;
+        position: absolute;
+        margin: {
+          left: auto;
+          right: auto;
+          top: (200px - 128px)/2;
+        };
+        left: 0;
+        right: 0;
+        top: 0;
+        background: $white;
+        border-radius: 64px;
+
+        img {
+          width: 116px;
+          height: 116px;
+          margin-left: 8px;
+          margin-top: 8px;
+        }
+      }
+
+      .post_image {
+        margin: 0;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        background-color: $secondary;
+
+        img {
+          height: auto;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          min-height: 200px;
+          border: none;
+        }
+      }
+
+      .post_wrapper {
+        background: $white;
+        height: 100%;
+      }
+
+      .post_content {
+        padding: 25px;
+
+        p {
+          margin: {
+            top: 0.5em;
+            bottom: 0;
+          }
+        }
+
+        .post_meta {
+          text-align: center;
+        }
+
+        h2 {
+          margin-top: 4px;
+          text-align: center;
+
+          a {
+            color: inherit;
+
+            &:hover {
+              text-decoration: none;
+              color: $primary;
+            }
+          }
+        }
+      }
+    }
+
+    .breaker {
+      width: 100%;
     }
   }
 }

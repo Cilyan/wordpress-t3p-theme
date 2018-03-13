@@ -191,6 +191,13 @@ function t3p_customize_register( $wp_customize ) {
   // Create a setting and control for each of the sections available in the theme.
   for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
     $wp_customize->add_setting(
+      'panel_format_' . $i,
+      array(
+        'default' => 'none'
+      )
+    );
+
+    $wp_customize->add_setting(
       'panel_' . $i, array(
         'default'           => false,
         'sanitize_callback' => 'absint',
@@ -199,10 +206,29 @@ function t3p_customize_register( $wp_customize ) {
     );
 
     $wp_customize->add_control(
+      'panel_format_' . $i,
+      array(
+        /* translators: %d is the front page section number */
+        'label' => sprintf( __( 'Front Page Section %d Format', 't3p' ), $i ),
+        'description' => ( 1 !== $i ? '' : __( 'Select the section that shall appear in each panel. Then select a page to provide the content.', 't3p' ) ),
+        'section' => 'front_page_options',
+        'type' => 'select',
+        'choices' => array(
+          'none' => __('Not Used', 't3p'),
+          'single' => __('Page Content Alone', 't3p'),
+          'trails' => __('Presentation of Trails', 't3p'),
+          'subscribe' => __('Subscription', 't3p'),
+          'news' => __('Latest News', 't3p'),
+          'separator' => __('Separator', 't3p'),
+        )
+      )
+    );
+
+    $wp_customize->add_control(
       'panel_' . $i, array(
         /* translators: %d is the front page section number */
         'label'           => sprintf( __( 'Front Page Section %d Content', 't3p' ), $i ),
-        'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 't3p' ) ),
+        'description'     => ( 1 !== $i ? '' : __( 'Page that will provide content for the section. The featured image is used as background of the section.', 't3p' ) ),
         'section'         => 'front_page_options',
         'type'            => 'dropdown-pages',
         'allow_addition'  => true,
@@ -210,13 +236,13 @@ function t3p_customize_register( $wp_customize ) {
       )
     );
 
-    $wp_customize->selective_refresh->add_partial(
-      'panel_' . $i, array(
-        'selector'            => '#panel' . $i,
-        'render_callback'     => 't3p_front_page_section',
-        'container_inclusive' => true,
-      )
-    );
+    //$wp_customize->selective_refresh->add_partial(
+    //  'panel_' . $i, array(
+    //    'selector'            => '#panel' . $i,
+    //    'render_callback'     => 't3p_front_page_section',
+    //    'container_inclusive' => true,
+    //  )
+    //);
   }
 }
 add_action( 'customize_register', 't3p_customize_register' );

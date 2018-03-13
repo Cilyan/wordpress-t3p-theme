@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-03-12 23:26:59+00:00\n"
+"POT-Creation-Date: 2018-03-13 21:21:01+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -83,9 +83,12 @@ msgid "Footer 2"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: functions.php:202 template-parts/page/content-front-page-panels.php:41
-#: template-parts/page/content-front-page-trails.php:41
-#: template-parts/page/content-front-page.php:40
+#: functions.php:202 template-parts/page/content-front-page.php:38
+#: template-parts/page/front-page/content-front-page-panels-news.php:41
+#: template-parts/page/front-page/content-front-page-panels-pricelist.php:41
+#: template-parts/page/front-page/content-front-page-panels-separator.php:35
+#: template-parts/page/front-page/content-front-page-panels-trails.php:41
+#: template-parts/page/front-page/content-front-page-panels.php:41
 #: template-parts/post/content-audio.php:81
 #: template-parts/post/content-gallery.php:68
 #: template-parts/post/content-image.php:58
@@ -390,15 +393,49 @@ msgid "Front Page Options"
 msgstr ""
 
 #. translators: %d is the front page section number
-#: inc/customizer.php:204
+#: inc/customizer.php:212
+msgid "Front Page Section %d Format"
+msgstr ""
+
+#: inc/customizer.php:213
+msgid ""
+"Select the section that shall appear in each panel. Then select a page to "
+"provide the content."
+msgstr ""
+
+#: inc/customizer.php:217
+msgid "Not Used"
+msgstr ""
+
+#: inc/customizer.php:218
+msgid "Page Content Alone"
+msgstr ""
+
+#: inc/customizer.php:219
+msgid "Presentation of Trails"
+msgstr ""
+
+#: inc/customizer.php:220
+msgid "Subscription"
+msgstr ""
+
+#: inc/customizer.php:221
+msgid "Latest News"
+msgstr ""
+
+#: inc/customizer.php:222
+msgid "Separator"
+msgstr ""
+
+#. translators: %d is the front page section number
+#: inc/customizer.php:230
 msgid "Front Page Section %d Content"
 msgstr ""
 
-#: inc/customizer.php:205
+#: inc/customizer.php:231
 msgid ""
-"Select pages to feature in each area from the dropdowns. Add an image to a "
-"section by setting a featured image in the page editor. Empty sections will "
-"not be displayed."
+"Page that will provide content for the section. The featured image is used "
+"as background of the section."
 msgstr ""
 
 #: inc/icon-functions.php:37
@@ -437,19 +474,19 @@ msgstr ""
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: inc/template-tags.php:149
+#: inc/template-tags.php:155
 msgid "Front Page Section %1$s Placeholder"
 msgstr ""
 
-#: inc/template-tags.php:238 single.php:25
+#: inc/template-tags.php:244 single.php:25
 msgid "Previous Post"
 msgstr ""
 
-#: inc/template-tags.php:238 single.php:26
+#: inc/template-tags.php:244 single.php:26
 msgid "Next Post"
 msgstr ""
 
-#: inc/template-tags.php:285
+#: inc/template-tags.php:291
 msgid "Post navigation"
 msgstr ""
 

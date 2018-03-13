@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-03-12 23:26:59+00:00\n"
-"PO-Revision-Date: 2018-03-13 00:28+0100\n"
+"POT-Creation-Date: 2018-03-13 21:21:01+00:00\n"
+"PO-Revision-Date: 2018-03-13 22:24+0100\n"
 "Last-Translator: Cilyan Olowen <gaknar@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -88,9 +88,12 @@ msgid "Footer 2"
 msgstr "Pied de page 2"
 
 #. translators: %s: Name of current post
-#: functions.php:202 template-parts/page/content-front-page-panels.php:41
-#: template-parts/page/content-front-page-trails.php:41
-#: template-parts/page/content-front-page.php:40
+#: functions.php:202 template-parts/page/content-front-page.php:38
+#: template-parts/page/front-page/content-front-page-panels-news.php:41
+#: template-parts/page/front-page/content-front-page-panels-pricelist.php:41
+#: template-parts/page/front-page/content-front-page-panels-separator.php:35
+#: template-parts/page/front-page/content-front-page-panels-trails.php:41
+#: template-parts/page/front-page/content-front-page-panels.php:41
 #: template-parts/post/content-audio.php:81
 #: template-parts/post/content-gallery.php:68
 #: template-parts/post/content-image.php:58
@@ -412,19 +415,54 @@ msgid "Front Page Options"
 msgstr "Options de la page d’accueil"
 
 #. translators: %d is the front page section number
-#: inc/customizer.php:204
-msgid "Front Page Section %d Content"
-msgstr "Contenu %d de section de page d’accueil"
+#: inc/customizer.php:212
+msgid "Front Page Section %d Format"
+msgstr "Format de la section de page d’accueil %d"
 
-#: inc/customizer.php:205
+#: inc/customizer.php:213
 msgid ""
-"Select pages to feature in each area from the dropdowns. Add an image to a "
-"section by setting a featured image in the page editor. Empty sections will "
-"not be displayed."
+"Select the section that shall appear in each panel. Then select a page to "
+"provide the content."
 msgstr ""
-"Sélectionnez les pages à mettre en avant dans chaque zone depuis la liste "
-"déroulante. Ajoutez une image à la section en définissant une image mise en "
-"avant dans l’éditeur de page. Les sections vides ne s’afficheront pas."
+"Sélectionner le format qui doit être appliqué dans chaque section. Ensuite, "
+"sélectionner une page qui fournira le contenu."
+
+#: inc/customizer.php:217
+msgid "Not Used"
+msgstr "Non utilisée"
+
+#: inc/customizer.php:218
+msgid "Page Content Alone"
+msgstr "Contenu de la page seul"
+
+#: inc/customizer.php:219
+msgid "Presentation of Trails"
+msgstr "Présentation des trails"
+
+#: inc/customizer.php:220
+msgid "Subscription"
+msgstr "Inscription"
+
+#: inc/customizer.php:221
+msgid "Latest News"
+msgstr "Actualités"
+
+#: inc/customizer.php:222
+msgid "Separator"
+msgstr "Séparateur"
+
+#. translators: %d is the front page section number
+#: inc/customizer.php:230
+msgid "Front Page Section %d Content"
+msgstr "Contenu de la section de page d’accueil %d"
+
+#: inc/customizer.php:231
+msgid ""
+"Page that will provide content for the section. The featured image is used "
+"as background of the section."
+msgstr ""
+"La page qui fournira le contenu à la section. L'image mise en avant est "
+"utilisée comme image de fond."
 
 #: inc/icon-functions.php:37
 msgid "Please define default parameters in the form of an array."
@@ -462,19 +500,19 @@ msgstr "Mots-clés"
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Modifier<span class=\"screen-reader-text\"> \"%s\"</span>"
 
-#: inc/template-tags.php:149
+#: inc/template-tags.php:155
 msgid "Front Page Section %1$s Placeholder"
 msgstr "Texte indicatif de la section %1$s de la page d’accueil"
 
-#: inc/template-tags.php:238 single.php:25
+#: inc/template-tags.php:244 single.php:25
 msgid "Previous Post"
 msgstr "Article précédent"
 
-#: inc/template-tags.php:238 single.php:26
+#: inc/template-tags.php:244 single.php:26
 msgid "Next Post"
 msgstr "Article suivant"
 
-#: inc/template-tags.php:285
+#: inc/template-tags.php:291
 msgid "Post navigation"
 msgstr "Navigation des articles"
 
@@ -607,3 +645,12 @@ msgstr "Cilyan Olowen"
 #. Template Name of the plugin/theme
 msgid "Full Width Page"
 msgstr "Page Pleine Largeur"
+
+#~ msgid ""
+#~ "Select pages to feature in each area from the dropdowns. Add an image to "
+#~ "a section by setting a featured image in the page editor. Empty sections "
+#~ "will not be displayed."
+#~ msgstr ""
+#~ "Sélectionnez les pages à mettre en avant dans chaque zone depuis la liste "
+#~ "déroulante. Ajoutez une image à la section en définissant une image mise "
+#~ "en avant dans l’éditeur de page. Les sections vides ne s’afficheront pas."
