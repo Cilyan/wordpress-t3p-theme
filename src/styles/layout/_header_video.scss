@@ -22,6 +22,12 @@ header.masthead-video  {
     overflow: hidden;
   }
 
+  .cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   #tv {
     position: absolute;
     opacity: 0;
@@ -69,7 +75,6 @@ header.masthead-video  {
 
   .container {
     font-size: 1rem;
-    margin-top: 80px;
     color: $white;
     text-shadow: 1px 1px 2px $black;
 
