@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-03-13 21:21:01+00:00\n"
-"PO-Revision-Date: 2018-03-13 22:24+0100\n"
+"POT-Creation-Date: 2018-03-14 23:26:20+00:00\n"
+"PO-Revision-Date: 2018-03-15 00:29+0100\n"
 "Last-Translator: Cilyan Olowen <gaknar@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -90,7 +90,7 @@ msgstr "Pied de page 2"
 #. translators: %s: Name of current post
 #: functions.php:202 template-parts/page/content-front-page.php:38
 #: template-parts/page/front-page/content-front-page-panels-news.php:41
-#: template-parts/page/front-page/content-front-page-panels-pricelist.php:41
+#: template-parts/page/front-page/content-front-page-panels-pricelist.php:37
 #: template-parts/page/front-page/content-front-page-panels-separator.php:35
 #: template-parts/page/front-page/content-front-page-panels-trails.php:41
 #: template-parts/page/front-page/content-front-page-panels.php:41
@@ -213,7 +213,7 @@ msgstr "Options du trail"
 msgid "Icon"
 msgstr "Icône"
 
-#: inc/custom-post-trail.php:98 inc/custom-post-trail.php:240
+#: inc/custom-post-trail.php:98 inc/custom-post-trail.php:256
 msgid "Set trail icon"
 msgstr "Définir l'icône du trail"
 
@@ -262,40 +262,56 @@ msgid "20 £"
 msgstr "20 €"
 
 #: inc/custom-post-trail.php:136
+msgid "Condition for reduced price"
+msgstr "Condition pour le prix réduit"
+
+#: inc/custom-post-trail.php:138
+msgid "before 3rd of June"
+msgstr "avant le 3 juin"
+
+#: inc/custom-post-trail.php:141
 msgid "Full Price"
 msgstr "Plein tarif"
 
-#: inc/custom-post-trail.php:138
+#: inc/custom-post-trail.php:143
 msgid "25 £"
 msgstr "25 €"
 
-#: inc/custom-post-trail.php:141
+#: inc/custom-post-trail.php:146
+msgid "Condition for full price"
+msgstr "Condition pour le plein tarif"
+
+#: inc/custom-post-trail.php:148
+msgid "after 4th of June"
+msgstr "après le 4 juin"
+
+#: inc/custom-post-trail.php:151
 msgid "Display on front page"
 msgstr "Afficher sur la page d'accueil"
 
-#: inc/custom-post-trail.php:143
+#: inc/custom-post-trail.php:153
 msgid ""
 "If checked, the trail will be displayed as a nice block on the front page"
 msgstr ""
 "Si coché, le trail sera affiché sur la page d’accueil dans un joli bloc de "
 "présentation"
 
-#: inc/custom-post-trail.php:146
+#: inc/custom-post-trail.php:156
 msgid "Display in price list"
 msgstr "Afficher dans la liste des prix"
 
-#: inc/custom-post-trail.php:148
+#: inc/custom-post-trail.php:158
 msgid ""
 "If checked, the trail will be present in the list next to the \"register\" "
 "button"
 msgstr ""
 "Si coché, le trail sera présent dans la liste à côté du bouton \"s'inscrire\""
 
-#: inc/custom-post-trail.php:151
+#: inc/custom-post-trail.php:161
 msgid "Priority"
 msgstr "Priorité"
 
-#: inc/custom-post-trail.php:154
+#: inc/custom-post-trail.php:164
 msgid ""
 "This value orders the trails on the front page. Lower values are presented "
 "first."
@@ -303,11 +319,11 @@ msgstr ""
 "Cette propriété ordonne les trails sur la page d'accueil. Les trails avec "
 "les valeurs les plus petites sont présentés en premier."
 
-#: inc/custom-post-trail.php:238
+#: inc/custom-post-trail.php:254
 msgid "Choose or Upload an Icon"
 msgstr "Choisir ou téléverser une icône"
 
-#: inc/custom-post-trail.php:239
+#: inc/custom-post-trail.php:255
 msgid "Use this icon"
 msgstr "Utiliser cette icône"
 
@@ -440,8 +456,8 @@ msgid "Presentation of Trails"
 msgstr "Présentation des trails"
 
 #: inc/customizer.php:220
-msgid "Subscription"
-msgstr "Inscription"
+msgid "Price List and Subscription"
+msgstr "Liste des prix et inscriptions"
 
 #: inc/customizer.php:221
 msgid "Latest News"
@@ -605,6 +621,10 @@ msgstr "S'inscrire"
 #: template-parts/post/content-video.php:87 template-parts/post/content.php:61
 msgid "Pages:"
 msgstr "Pages&nbsp;:"
+
+#: template-parts/page/front-page/content-front-page-panels-pricelist.php:83
+msgid "I Register Now"
+msgstr "Je m'inscris"
 
 #: template-parts/post/content-excerpt.php:59
 msgid "+ Read More"
