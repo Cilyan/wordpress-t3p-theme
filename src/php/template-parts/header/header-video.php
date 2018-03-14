@@ -44,7 +44,7 @@
         </div>
       </div>
       <div class="register">
-        <a href=""><?php _e('Register Now', 't3p'); ?></a>
+        <a href="#subscribe" id="subscribe-link"><?php _e('Register Now', 't3p'); ?></a>
       </div>
     </div>
   </div>
