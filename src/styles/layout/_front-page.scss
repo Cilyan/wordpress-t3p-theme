@@ -384,5 +384,51 @@
         }
       }
     }
+
+    .trails-pricelist-post {
+      @include make-col-ready();
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      margin-bottom: 30px;
+
+      color: $white;
+
+      @include media-breakpoint-up("lg") {
+        @include make-col(4, 12);
+      }
+
+      @include media-breakpoint-up("xl") {
+        @include make-col(5, 12);
+      }
+    }
+
+    .register-button {
+
+      a {
+        display: block;
+        text-align: center;
+        background-color: $primary;
+        color: $white;
+        padding: 2px 40px 2px 40px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 2em;
+        vertical-align: middle;
+        white-space: nowrap;
+
+        font-size: 2rem;
+
+        @include media-breakpoint-up("md") {
+          font-size: 2.5rem;
+        }
+
+        &:hover {
+          background-color: darken($primary, 10%);
+        }
+      }
+    }
   }
 }

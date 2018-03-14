@@ -29,19 +29,15 @@ global $t3pcounter;
       <?php t3p_edit_link( get_the_ID() ); ?>
     </header><!-- .entry-header -->
 
-    <div class="entry-content">
-      <?php
-        /* translators: %s: Name of current post */
-        the_content(
-          sprintf(
-            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 't3p' ),
-            get_the_title()
-          )
-        );
-      ?>
-    </div><!-- .entry-content -->
-
     <?php
+    // Save current post content for later
+    /* translators: %s: Name of current post */
+    $content = get_the_content(
+      sprintf(
+        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 't3p' ),
+        get_the_title()
+      )
+    );
     // Show three most recent posts.
     $trails = new WP_Query(
       array(
@@ -75,6 +71,19 @@ global $t3pcounter;
             ?>
         </div><!-- .trails-pricelist -->
       <?php endif; ?>
+
+      <div class="trails-pricelist-post">
+        <div class="trails-pricelist-post-content">
+          <div class="entry-content">
+            <?php
+              echo $content;
+            ?>
+          </div><!-- .entry-content -->
+          <div class="register-button">
+            <a href="http://chrono.geofp.com/l3p2018/signin/index.php" id=""><?php _e('I Register Now', 't3p'); ?></a>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div><!-- .container -->
