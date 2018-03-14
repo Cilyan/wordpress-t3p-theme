@@ -243,4 +243,146 @@
       width: 100%;
     }
   }
+
+  .trails-subscription-row {
+    @include make-row();
+
+    .trails-pricelist {
+      @include make-col-ready();
+
+      @include media-breakpoint-up("lg") {
+        @include make-col(8, 12);
+      }
+
+      @include media-breakpoint-up("xl") {
+        @include make-col(7, 12);
+      }
+
+      margin-bottom: 30px;
+
+      .trail-pricelist-item a {
+        @include make-row();
+        margin-top: ($grid-gutter-width / 2);
+        margin-bottom: ($grid-gutter-width / 2);
+
+        min-height: 75px;
+        text-align: center;
+
+        &:hover {
+          .trail-icon-wrapper, .inner-row {
+            background: lighten($secondary, 15%);
+          }
+        }
+      }
+
+      .trail-icon-wrapper, .inner-row {
+        background: $white;
+        border-radius: 3px;
+        transition: all .6s ease-out;
+      }
+
+      .trail-icon {
+        @include make-col-ready();
+        margin-bottom: ($grid-gutter-width / 4);
+
+        @include media-breakpoint-up("md") {
+          @include make-col(2, 12);
+          margin-bottom: 0;
+        }
+
+        .trail-icon-wrapper {
+          height: 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            max-height: 100%;
+            width: auto;
+          }
+
+          @include media-breakpoint-up("md") {
+            height: 100%;
+
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+
+      .trail-details {
+        @include make-col-ready();
+        color: $black;
+        font-size: 1.2rem;
+        margin-bottom: ($grid-gutter-width / 2);
+
+        span {
+          text-transform: uppercase;
+          font-size: 0.7rem;
+          margin-left: 2em;
+        }
+
+        .trail-title, .trail-pricesingle,
+        .trail-pricereduced, .trail-pricefull {
+          padding-top: ($grid-gutter-width / 4);
+          padding-bottom: ($grid-gutter-width / 4);
+        }
+
+        .trail-title h5 {
+          font-size: 1.6rem;
+        }
+
+        .trail-pricesingle, .trail-pricereduced,
+        .trail-pricefull {
+          border-top: solid 1px #d8d8d8;
+          width: 80%;
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+
+        @include media-breakpoint-up("md") {
+          margin-bottom: 0;
+
+          @include make-col(9, 12);
+          span {
+            display: block;
+            margin-left: 0;
+          }
+
+          .trail-title h5 {
+            margin: 0;
+            font-size: 1.3rem;
+          }
+
+          .inner-row {
+            @include make-row();
+            align-items: center;
+            height: 100%;
+          }
+          .trail-title, .trail-pricesingle {
+            @include make-col-ready();
+            @include make-col(6, 12);
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .trail-pricereduced, .trail-pricefull {
+            @include make-col-ready();
+            @include make-col(3, 12);
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 0;
+            border-left: solid 1px #d8d8d8;
+          }
+
+          .trail-pricesingle {
+            border-top: 0;
+            border-left: solid 1px #d8d8d8;
+          }
+        }
+      }
+    }
+  }
 }

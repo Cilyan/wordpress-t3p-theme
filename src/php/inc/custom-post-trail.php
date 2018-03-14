@@ -133,9 +133,19 @@ function t3p_trail_add_metaboxes_content($post) {
   <input type="text" name="trail-pricereduced" id="t3p-meta-trail-pricereduced" placeholder="<?php _e('20 £', 't3p')?>" value="<?php if (isset ($stored_meta['trail-pricereduced'])) echo $stored_meta['trail-pricereduced'][0]; ?>" />
 
   <p class="post-attributes-label-wrapper">
+    <label for="t3p-meta-trail-pricereducedcond" class="t3p-trail-attributes-label"><?php _e('Condition for reduced price', 't3p')?></label>
+  </p>
+  <input type="text" name="trail-pricereducedcond" id="t3p-meta-trail-pricereducedcond" placeholder="<?php _e('before 3rd of June', 't3p')?>" value="<?php if (isset ($stored_meta['trail-pricereducedcond'])) echo $stored_meta['trail-pricereducedcond'][0]; ?>" />
+
+  <p class="post-attributes-label-wrapper">
     <label for="t3p-meta-trail-pricefull" class="t3p-trail-attributes-label"><?php _e('Full Price', 't3p')?></label>
   </p>
   <input type="text" name="trail-pricefull" id="t3p-meta-trail-pricefull" placeholder="<?php _e('25 £', 't3p')?>" value="<?php if (isset ($stored_meta['trail-pricefull'])) echo $stored_meta['trail-pricefull'][0]; ?>" />
+
+  <p class="post-attributes-label-wrapper">
+    <label for="t3p-meta-trail-pricefullcond" class="t3p-trail-attributes-label"><?php _e('Condition for full price', 't3p')?></label>
+  </p>
+  <input type="text" name="trail-pricefullcond" id="t3p-meta-trail-pricefullcond" placeholder="<?php _e('after 4th of June', 't3p')?>" value="<?php if (isset ($stored_meta['trail-pricefullcond'])) echo $stored_meta['trail-pricefullcond'][0]; ?>" />
 
   <p class="post-attributes-label-wrapper">
     <label for="t3p-meta-trail-displayfront" class="t3p-trail-attributes-label"><?php _e('Display on front page', 't3p')?></label>
@@ -205,8 +215,14 @@ function t3p_trail_save_metaboxes($post_id) {
   if(isset($_POST['trail-pricereduced'])) {
     update_post_meta($post_id, 'trail-pricereduced', sanitize_text_field($_POST['trail-pricereduced']));
   }
+  if(isset($_POST['trail-pricereducedcond'])) {
+    update_post_meta($post_id, 'trail-pricereducedcond', sanitize_text_field($_POST['trail-pricereducedcond']));
+  }
   if(isset($_POST['trail-pricefull'])) {
     update_post_meta($post_id, 'trail-pricefull', sanitize_text_field($_POST['trail-pricefull']));
+  }
+  if(isset($_POST['trail-pricefullcond'])) {
+    update_post_meta($post_id, 'trail-pricefullcond', sanitize_text_field($_POST['trail-pricefullcond']));
   }
   if(isset($_POST['trail-displayfront'])) {
     update_post_meta($post_id, 'trail-displayfront', 'yes');

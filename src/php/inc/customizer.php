@@ -217,7 +217,7 @@ function t3p_customize_register( $wp_customize ) {
           'none' => __('Not Used', 't3p'),
           'single' => __('Page Content Alone', 't3p'),
           'trails' => __('Presentation of Trails', 't3p'),
-          'subscribe' => __('Subscription', 't3p'),
+          'pricelist' => __('Price List and Subscription', 't3p'),
           'news' => __('Latest News', 't3p'),
           'separator' => __('Separator', 't3p'),
         )
