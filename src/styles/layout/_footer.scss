@@ -49,4 +49,39 @@ footer#colophon {
       }
     }
   }
+
+  /* Social nav */
+  .social-navigation {
+    font-size: 1rem;
+    margin-bottom: 1em;
+    ul {
+      list-style: none;
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+    li {
+      display: inline;
+    }
+    a {
+      background-color: $primary;
+      -webkit-border-radius: 40px;
+      border-radius: 40px;
+      color: darken($white, 10%); // limits "flashyness" on light background
+      display: inline-block;
+      height: 40px;
+      margin: 0 1em 0.5em 0;
+      text-align: center;
+      width: 40px;
+      transition: background 0.2s;
+      &:hover, &:focus {
+        background-color: darken($primary, 10%);
+      }
+    }
+    .icon {
+      height: 16px;
+      top: 12px;
+      width: 16px;
+      vertical-align: top;
+    }
+  }
 }

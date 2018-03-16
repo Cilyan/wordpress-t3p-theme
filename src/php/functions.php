@@ -52,6 +52,7 @@ function t3p_setup() {
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus( array(
     'menu-primary' => esc_html__( 'Primary', 't3p' ),
+    'social' => __( 'Social Links Menu', 't3p' ),
   ) );
 
   /*
