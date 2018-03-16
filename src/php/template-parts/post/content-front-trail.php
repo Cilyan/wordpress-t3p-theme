@@ -18,7 +18,9 @@
       $icon_tag = wp_get_attachment_image($icon_id, array(112, 112), false);
       if ($icon_tag != ""):
     ?>
-      <div class="trail-icon-container"><?php echo $icon_tag; ?></div>
+      <a href="<?php the_permalink(); ?>">
+        <div class="trail-icon-container"><?php echo $icon_tag; ?></div>
+      </a>
     <?php endif; ?>
 
     <div class="post_image">
