@@ -16,6 +16,9 @@ module.exports = {
       "./script/trail.js",
       "./styles/admin/trail.scss"
     ],
+    "admin-trail-options": [
+      "./script/options.js"
+    ],
     "customizer": [
       "./script/customizer.js"
     ],

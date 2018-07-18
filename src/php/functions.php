@@ -234,7 +234,13 @@ function t3p_scripts() {
 
     wp_localize_script( 't3p-frontpage', 'masthead_video_props', $masthead_video_props);
 
-    $race_start = new DateTime('2018-07-22 07:30', new DateTimeZone('Europe/Paris'));
+    $t3p_main_options = get_option('t3p_main_options');
+
+    $race_start_str = $t3p_main_options['t3p_main_field_date_start'];
+    $race_start_str .= " ";
+    $race_start_str .= $t3p_main_options['t3p_main_field_time_start'];
+
+    $race_start = new DateTime($race_start_str, new DateTimeZone(get_option('timezone_string')));
     $countdown_props = array(
       'start_timestamp' => $race_start->getTimestamp() * 1000,
     );
@@ -343,6 +349,11 @@ add_filter( 'the_content', 'wpautop' , 12);
  * Custom Post Type for Trails
  */
 require get_parent_theme_file_path( '/inc/custom-post-trail.php' );
+
+/**
+ * Custom Options Page for Trails
+ */
+require get_parent_theme_file_path( '/inc/custom-options-trail.php' );
 
 /**
  * Implement the Custom Header feature.
