@@ -5,6 +5,8 @@
  * @package t3p
  */
 
+$t3p_main_options = get_option('t3p_main_options');
+
 ?>
 <!-- Page Header -->
 <header class="masthead-video" style="background-image: url('<?php header_image(); ?>')">
@@ -33,15 +35,21 @@
   <div class="container main-container">
     <div class="header-counter-content">
       <div class="counter">
-        <p class="counter-label"><?php _e('Start in', 't3p'); ?></p>
-        <div id="t3p-counter">
-          <p class="counter-element-days"><span id="t3p-counter-days">00</span><span class="counter-element-label"><?php _e('days', 't3p'); ?></span></p>
-          <p><span id="t3p-counter-hours">00</span><span class="counter-element-label"><?php _e('hours', 't3p'); ?></span></p>
-          <p class="counter-separator">:</p>
-          <p><span id="t3p-counter-minutes">00</span><span class="counter-element-label"><?php _e('minutes', 't3p'); ?></span></p>
-          <p class="counter-separator">:</p>
-          <p><span id="t3p-counter-seconds">00</span><span class="counter-element-label"><?php _e('seconds', 't3p'); ?></span></p>
-        </div>
+        <?php if ( $t3p_main_options['t3p_main_field_countdown_enabled'] == "yes" ): ?>
+          <p class="counter-label" id="counter-label"><?php _e('Start in', 't3p'); ?></p>
+          <div id="t3p-counter">
+            <p class="counter-element-days"><span id="t3p-counter-days">00</span><span class="counter-element-label"><?php _e('days', 't3p'); ?></span></p>
+            <p><span id="t3p-counter-hours">00</span><span class="counter-element-label"><?php _e('hours', 't3p'); ?></span></p>
+            <p class="counter-separator">:</p>
+            <p><span id="t3p-counter-minutes">00</span><span class="counter-element-label"><?php _e('minutes', 't3p'); ?></span></p>
+            <p class="counter-separator">:</p>
+            <p><span id="t3p-counter-seconds">00</span><span class="counter-element-label"><?php _e('seconds', 't3p'); ?></span></p>
+          </div>
+        <?php else: ?>
+          <div id="t3p-counter">
+            <p><?php echo $t3p_main_options['t3p_main_field_countdown_replacement']; ?></p>
+          </div>
+        <?php endif; ?>
       </div>
       <div class="register">
         <a href="#subscribe" id="subscribe-link"><?php _e('Register Now', 't3p'); ?></a>

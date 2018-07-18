@@ -15,10 +15,12 @@ function t3p_settings_init()
     't3p_main_options',
     [
       'default' => [
-        't3p_main_field_date_start' => '2018-07-22',
+        't3p_main_field_date_start' => '',
         't3p_main_field_time_start' => '07:30',
         't3p_main_field_register_enabled' => "no",
         't3p_main_field_register_link' => '',
+        't3p_main_field_countdown_enabled' => "no",
+        't3p_main_field_countdown_replacement' => ''
       ],
       'sanitize_callback' => 't3p_main_options_sanitize'
     ]
@@ -27,7 +29,7 @@ function t3p_settings_init()
   // "Dates" section
   add_settings_section(
     't3p_main_section_dates',
-    __('Dates', 't3p'),
+    __('Countdown', 't3p'),
     't3p_main_section_dates_cb',
     't3p_main'
   );
@@ -57,10 +59,34 @@ function t3p_settings_init()
     ]
   );
 
+  add_settings_field(
+    't3p_main_field_countdown_enabled',
+    __('Enable', 't3p'),
+    't3p_main_field_countdown_enabled_cb',
+    't3p_main',
+    't3p_main_section_dates',
+    [
+      'label_for' => 't3p_main_field_countdown_enabled',
+      'class' => 't3p_row',
+    ]
+  );
+
+  add_settings_field(
+    't3p_main_field_countdown_replacement',
+    __('Replacement text', 't3p'),
+    't3p_main_field_countdown_replacement_cb',
+    't3p_main',
+    't3p_main_section_dates',
+    [
+      'label_for' => 't3p_main_field_countdown_replacement',
+      'class' => 't3p_row',
+    ]
+  );
+
   // Register section
   add_settings_section(
     't3p_main_section_register',
-    __('Register', 't3p'),
+    __('Registration', 't3p'),
     't3p_main_section_register_cb',
     't3p_main'
   );
@@ -99,7 +125,7 @@ add_action('admin_init', 't3p_settings_init');
 function t3p_main_section_dates_cb($args)
 {
   ?>
-  <p id="<?php echo esc_attr($args['id']); ?>"><?php esc_html_e( 'Define the main date and time of the trails', 't3p' ); ?></p>
+  <p id="<?php echo esc_attr($args['id']); ?>"><?php esc_html_e( 'These parameters define how the countdown on the front page behaves', 't3p' ); ?></p>
   <?php
 }
 
@@ -139,6 +165,42 @@ function t3p_main_field_time_start_cb($args)
       value="<?php echo $options[ $args['label_for'] ]?>"
       class="regular-text"
     >
+ <?php
+}
+
+function t3p_main_field_countdown_enabled_cb($args)
+{
+  // get the value of the setting we've registered with register_setting()
+  $options = get_option('t3p_main_options');
+  // output the field
+  ?>
+    <input
+      type="checkbox"
+      id="<?php echo esc_attr($args['label_for']); ?>"
+      name="t3p_main_options[<?php echo esc_attr($args['label_for']); ?>]"
+      value="yes"
+      <?php checked($options[$args['label_for']], "yes"); ?>
+    >
+    <?php esc_html_e('Display the countdown on the front page', 't3p' ); ?>
+ <?php
+}
+
+function t3p_main_field_countdown_replacement_cb($args)
+{
+  // get the value of the setting we've registered with register_setting()
+  $options = get_option('t3p_main_options');
+  // output the field
+  ?>
+    <input
+      type="text"
+      id="<?php echo esc_attr($args['label_for']); ?>"
+      name="t3p_main_options[<?php echo esc_attr($args['label_for']); ?>]"
+      value="<?php echo $options[ $args['label_for'] ]?>"
+      class="regular-text"
+    >
+    <p class="description">
+      <?php esc_html_e('Give in some text that will replace the counter when it is not displayed, e.g. when the next date is not yet known.', 't3p' ); ?>
+    </p>
  <?php
 }
 
@@ -191,9 +253,8 @@ function t3p_options_page()
 }
 add_action('admin_menu', 't3p_options_page');
 
-/**
- * top level menu:
- * callback functions
+/*
+ * Actual content of the settings page
  */
 function t3p_main_options_page_html()
 {
@@ -207,12 +268,8 @@ function t3p_main_options_page_html()
     <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
     <form action="options.php" method="post">
     <?php
-      // output security fields for the registered setting "wporg"
       settings_fields('t3p_main');
-      // output setting sections and their fields
-      // (sections are registered for "wporg", each field is registered to a specific section)
       do_settings_sections('t3p_main');
-      // output save settings button
       submit_button();
     ?>
     </form>
@@ -272,6 +329,7 @@ function t3p_main_options_sanitize($input) {
         }
         break;
       case 't3p_main_field_register_enabled':
+      case 't3p_main_field_countdown_enabled':
         $san_val = sanitize_key($val);
         if ($san_val === "yes") {
           $new_input[ $key ] = "yes";
@@ -293,6 +351,9 @@ function t3p_main_options_sanitize($input) {
         else {
           $new_input[ $key ] = $san_val;
         }
+        break;
+      case 't3p_main_field_countdown_replacement':
+        $new_input[ $key ] = sanitize_text_field($val);
         break;
     }
   }

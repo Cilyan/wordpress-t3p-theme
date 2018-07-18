@@ -24,6 +24,7 @@ var t3p_counter_hours = null;
 var t3p_counter_minutes = null;
 var t3p_counter_seconds = null;
 var t3p_counter_interval = null;
+var t3p_counter_label = null;
 var t3p_start_timestamp = parseInt(countdown_props.start_timestamp, 10)
 
 $(document).ready(function () {
@@ -31,6 +32,7 @@ $(document).ready(function () {
   t3p_counter_hours = $('#t3p-counter-hours');
   t3p_counter_minutes = $('#t3p-counter-minutes');
   t3p_counter_seconds = $('#t3p-counter-seconds');
+  t3p_counter_label = $('#counter-label');
 
   t3p_counter_interval = setInterval(onCountdownTick, 500);
 });
@@ -38,11 +40,12 @@ $(document).ready(function () {
 function onCountdownTick() {
   var days, hours, minutes, seconds;
   var now = $.now();
-  var diff = t3p_start_timestamp - $.now();
+  var diff = t3p_start_timestamp - $.now() + 999; // Adding 1 second, because it is floored down
 
-  if (diff < 0) {
+  if (diff < 1000) {
     hours = minutes = seconds = "00";
     days = 0;
+    t3p_counter_label.text(countdown_props.label_started)
     clearInterval(t3p_counter_interval);
   }
   else {
