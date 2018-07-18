@@ -17,6 +17,8 @@ function t3p_settings_init()
       'default' => [
         't3p_main_field_date_start' => '2018-07-22',
         't3p_main_field_time_start' => '07:30',
+        't3p_main_field_register_enabled' => "no",
+        't3p_main_field_register_link' => '',
       ],
       'sanitize_callback' => 't3p_main_options_sanitize'
     ]
@@ -54,6 +56,38 @@ function t3p_settings_init()
       'class' => 't3p_row',
     ]
   );
+
+  // Register section
+  add_settings_section(
+    't3p_main_section_register',
+    __('Register', 't3p'),
+    't3p_main_section_register_cb',
+    't3p_main'
+  );
+
+  add_settings_field(
+    't3p_main_field_register_enabled',
+    __('Enable', 't3p'),
+    't3p_main_field_register_enabled_cb',
+    't3p_main',
+    't3p_main_section_register',
+    [
+      'label_for' => 't3p_main_field_register_enabled',
+      'class' => 't3p_row',
+    ]
+  );
+
+  add_settings_field(
+    't3p_main_field_register_link',
+    __('Link to register interface', 't3p'),
+    't3p_main_field_register_link_cb',
+    't3p_main',
+    't3p_main_section_register',
+    [
+      'label_for' => 't3p_main_field_register_link',
+      'class' => 't3p_row',
+    ]
+  );
 }
 add_action('admin_init', 't3p_settings_init');
 
@@ -69,6 +103,13 @@ function t3p_main_section_dates_cb($args)
   <?php
 }
 
+function t3p_main_section_register_cb($args)
+{
+  ?>
+  <p id="<?php echo esc_attr($args['id']); ?>"><?php esc_html_e( 'Properties of the register button on the frontpage', 't3p' ); ?></p>
+  <?php
+}
+
 function t3p_main_field_date_start_cb($args)
 {
   // get the value of the setting we've registered with register_setting()
@@ -80,6 +121,7 @@ function t3p_main_field_date_start_cb($args)
       id="<?php echo esc_attr($args['label_for']); ?>"
       name="t3p_main_options[<?php echo esc_attr($args['label_for']); ?>]"
       value="<?php echo $options[ $args['label_for'] ]?>"
+      class="regular-text"
     >
  <?php
 }
@@ -95,6 +137,40 @@ function t3p_main_field_time_start_cb($args)
       id="<?php echo esc_attr($args['label_for']); ?>"
       name="t3p_main_options[<?php echo esc_attr($args['label_for']); ?>]"
       value="<?php echo $options[ $args['label_for'] ]?>"
+      class="regular-text"
+    >
+ <?php
+}
+
+function t3p_main_field_register_enabled_cb($args)
+{
+  // get the value of the setting we've registered with register_setting()
+  $options = get_option('t3p_main_options');
+  // output the field
+  ?>
+    <input
+      type="checkbox"
+      id="<?php echo esc_attr($args['label_for']); ?>"
+      name="t3p_main_options[<?php echo esc_attr($args['label_for']); ?>]"
+      value="yes"
+      <?php checked($options[$args['label_for']], "yes"); ?>
+    >
+    <?php esc_html_e('Registrations are open, button is displayed', 't3p' ); ?>
+ <?php
+}
+
+function t3p_main_field_register_link_cb($args)
+{
+  // get the value of the setting we've registered with register_setting()
+  $options = get_option('t3p_main_options');
+  // output the field
+  ?>
+    <input
+      type="text"
+      id="<?php echo esc_attr($args['label_for']); ?>"
+      name="t3p_main_options[<?php echo esc_attr($args['label_for']); ?>]"
+      value="<?php echo $options[ $args['label_for'] ]?>"
+      class="regular-text code"
     >
  <?php
 }
@@ -137,7 +213,7 @@ function t3p_main_options_page_html()
       // (sections are registered for "wporg", each field is registered to a specific section)
       do_settings_sections('t3p_main');
       // output save settings button
-      submit_button('Save Settings');
+      submit_button();
     ?>
     </form>
     </div>
@@ -195,6 +271,29 @@ function t3p_main_options_sanitize($input) {
           );
         }
         break;
+      case 't3p_main_field_register_enabled':
+        $san_val = sanitize_key($val);
+        if ($san_val === "yes") {
+          $new_input[ $key ] = "yes";
+        }
+        else {
+          $new_input[ $key ] = "no";
+        }
+        break;
+      case 't3p_main_field_register_link':
+        $san_val = esc_url($val);
+        if ($san_val === '' && $val !== '') {
+          add_settings_error(
+            't3p_main_field_register_link',
+            't3p_main_field_register_link',
+            __('Invalid url for registration link', 't3p'),
+            'error'
+          );
+        }
+        else {
+          $new_input[ $key ] = $san_val;
+        }
+        break;
     }
   }
   return $new_input;
@@ -233,3 +332,5 @@ function t3p_options_admin_scripts($hook_suffix) {
 //  wp_enqueue_style('trail_styles', get_template_directory_uri() . '/assets/styles/admin-trail-options.css');
 }
 add_action('admin_enqueue_scripts', 't3p_options_admin_scripts');
+
+//

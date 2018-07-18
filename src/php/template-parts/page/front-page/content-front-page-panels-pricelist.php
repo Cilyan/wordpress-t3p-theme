@@ -19,6 +19,9 @@ global $t3pcounter;
   else {
     $style  = "";
   }
+
+  $t3p_main_options = get_option('t3p_main_options');
+
 ?>
 
 <section id="subscribe" <?php post_class( 'front-panel' ); ?> <?php echo $style; ?> >
@@ -79,9 +82,11 @@ global $t3pcounter;
               echo $content;
             ?>
           </div><!-- .entry-content -->
-          <div class="register-button">
-            <a href="http://chrono.geofp.com/l3p2018/signin/index.php" id=""><?php _e('I Register Now', 't3p'); ?></a>
-          </div>
+          <?php if ( $t3p_main_options['t3p_main_field_register_enabled'] == "yes" ): ?>
+            <div class="register-button">
+              <a href="<?php echo $t3p_main_options['t3p_main_field_register_link']; ?>" id=""><?php _e('I Register Now', 't3p'); ?></a>
+            </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
