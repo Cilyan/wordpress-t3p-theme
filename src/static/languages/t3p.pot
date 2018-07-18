@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-03-14 23:26:20+00:00\n"
+"POT-Creation-Date: 2018-07-18 21:18:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -70,22 +70,26 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:55
+msgid "Social Links Menu"
+msgstr ""
+
+#: functions.php:159
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:160 functions.php:172
+#: functions.php:161 functions.php:173
 msgid "Add widgets here to appear in your footer."
 msgstr ""
 
-#: functions.php:170
+#: functions.php:171
 msgid "Footer 2"
 msgstr ""
 
 #. translators: %s: Name of current post
-#: functions.php:202 template-parts/page/content-front-page.php:38
+#: functions.php:203 template-parts/page/content-front-page.php:38
 #: template-parts/page/front-page/content-front-page-panels-news.php:41
-#: template-parts/page/front-page/content-front-page-panels-pricelist.php:37
+#: template-parts/page/front-page/content-front-page-panels-pricelist.php:40
 #: template-parts/page/front-page/content-front-page-panels-separator.php:35
 #: template-parts/page/front-page/content-front-page-panels-trails.php:41
 #: template-parts/page/front-page/content-front-page-panels.php:41
@@ -96,8 +100,82 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
+#: functions.php:246
+msgid "Let's go!"
+msgstr ""
+
 #: header.php:25
 msgid "Skip to content"
+msgstr ""
+
+#: inc/custom-options-trail.php:32
+msgid "Countdown"
+msgstr ""
+
+#: inc/custom-options-trail.php:40
+msgid "Trail date"
+msgstr ""
+
+#: inc/custom-options-trail.php:52
+msgid "Main trail start time"
+msgstr ""
+
+#: inc/custom-options-trail.php:64 inc/custom-options-trail.php:96
+msgid "Enable"
+msgstr ""
+
+#: inc/custom-options-trail.php:76
+msgid "Replacement text"
+msgstr ""
+
+#: inc/custom-options-trail.php:89
+msgid "Registration"
+msgstr ""
+
+#: inc/custom-options-trail.php:108
+msgid "Link to register interface"
+msgstr ""
+
+#: inc/custom-options-trail.php:128
+msgid "These parameters define how the countdown on the front page behaves"
+msgstr ""
+
+#: inc/custom-options-trail.php:135
+msgid "Properties of the register button on the frontpage"
+msgstr ""
+
+#: inc/custom-options-trail.php:184
+msgid "Display the countdown on the front page"
+msgstr ""
+
+#: inc/custom-options-trail.php:202
+msgid ""
+"Give in some text that will replace the counter when it is not displayed, e."
+"g. when the next date is not yet known."
+msgstr ""
+
+#: inc/custom-options-trail.php:220
+msgid "Registrations are open, button is displayed"
+msgstr ""
+
+#: inc/custom-options-trail.php:247 inc/custom-options-trail.php:248
+msgid "T3P Options"
+msgstr ""
+
+#: inc/custom-options-trail.php:303
+msgid "Invalid start date"
+msgstr ""
+
+#: inc/custom-options-trail.php:312
+msgid "Invalid start date format"
+msgstr ""
+
+#: inc/custom-options-trail.php:326
+msgid "Invalid start time format"
+msgstr ""
+
+#: inc/custom-options-trail.php:347
+msgid "Invalid url for registration link"
 msgstr ""
 
 #: inc/custom-post-trail.php:7
@@ -562,27 +640,27 @@ msgstr ""
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: template-parts/header/header-video.php:36
+#: template-parts/header/header-video.php:39
 msgid "Start in"
 msgstr ""
 
-#: template-parts/header/header-video.php:38
+#: template-parts/header/header-video.php:41
 msgid "days"
 msgstr ""
 
-#: template-parts/header/header-video.php:39
+#: template-parts/header/header-video.php:42
 msgid "hours"
 msgstr ""
 
-#: template-parts/header/header-video.php:41
+#: template-parts/header/header-video.php:44
 msgid "minutes"
 msgstr ""
 
-#: template-parts/header/header-video.php:43
+#: template-parts/header/header-video.php:46
 msgid "seconds"
 msgstr ""
 
-#: template-parts/header/header-video.php:47
+#: template-parts/header/header-video.php:55
 msgid "Register Now"
 msgstr ""
 
@@ -594,7 +672,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/page/front-page/content-front-page-panels-pricelist.php:83
+#: template-parts/page/front-page/content-front-page-panels-pricelist.php:87
 msgid "I Register Now"
 msgstr ""
 

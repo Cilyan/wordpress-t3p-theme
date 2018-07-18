@@ -243,7 +243,7 @@ function t3p_scripts() {
     $race_start = new DateTime($race_start_str, new DateTimeZone(get_option('timezone_string')));
     $countdown_props = array(
       'start_timestamp' => $race_start->getTimestamp() * 1000,
-      'label_started' => esc_html("Let's go!", 't3p'),
+      'label_started' => esc_html__("Let's go!", 't3p'),
     );
 
     wp_localize_script( 't3p-frontpage', 'countdown_props', $countdown_props);
