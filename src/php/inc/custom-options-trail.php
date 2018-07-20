@@ -17,9 +17,9 @@ function t3p_settings_init()
       'default' => [
         't3p_main_field_date_start' => '',
         't3p_main_field_time_start' => '07:30',
-        't3p_main_field_register_enabled' => "no",
+        't3p_main_field_register_enabled' => "",
         't3p_main_field_register_link' => '',
-        't3p_main_field_countdown_enabled' => "no",
+        't3p_main_field_countdown_enabled' => "",
         't3p_main_field_countdown_replacement' => ''
       ],
       'sanitize_callback' => 't3p_main_options_sanitize'
@@ -280,7 +280,8 @@ function t3p_main_options_page_html()
 function t3p_main_options_sanitize($input) {
   // Fill return array with old values. That way, if a data is not valid, it
   // will not be saved (old value is saved instead)
-  $new_input = get_option('t3p_main_options');
+  $old_input = get_option('t3p_main_options');
+  $new_input = array();
   // Loop through the input and sanitize each of the values
   foreach ( $input as $key => $val ) {
     switch ( $key ) {
@@ -303,6 +304,7 @@ function t3p_main_options_sanitize($input) {
               __('Invalid start date', 't3p'),
               'error'
             );
+            $new_input[$key] = $old_input[$key];
           }
         }
         else {
@@ -312,6 +314,7 @@ function t3p_main_options_sanitize($input) {
             __('Invalid start date format', 't3p'),
             'error'
           );
+          $new_input[$key] = $old_input[$key];
         }
         break;
       case 't3p_main_field_time_start':
@@ -326,6 +329,7 @@ function t3p_main_options_sanitize($input) {
             __('Invalid start time format', 't3p'),
             'error'
           );
+          $new_input[$key] = $old_input[$key];
         }
         break;
       case 't3p_main_field_register_enabled':
@@ -335,7 +339,7 @@ function t3p_main_options_sanitize($input) {
           $new_input[ $key ] = "yes";
         }
         else {
-          $new_input[ $key ] = "no";
+          $new_input[ $key ] = "";
         }
         break;
       case 't3p_main_field_register_link':
@@ -347,6 +351,7 @@ function t3p_main_options_sanitize($input) {
             __('Invalid url for registration link', 't3p'),
             'error'
           );
+          $new_input[$key] = $old_input[$key];
         }
         else {
           $new_input[ $key ] = $san_val;
