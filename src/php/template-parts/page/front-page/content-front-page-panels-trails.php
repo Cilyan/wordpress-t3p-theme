@@ -25,7 +25,7 @@ global $t3pcounter;
   }
 ?>
 
-<section id="panel<?php echo $t3pcounter; ?>" <?php post_class( 'front-panel' ); ?> <?php echo $style; ?> ><!-- Trails -->
+<section id="discover" <?php post_class( 'front-panel' ); ?> <?php echo $style; ?> ><!-- Trails -->
 
   <div class="container">
     <header class="entry-header">

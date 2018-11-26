@@ -52,7 +52,11 @@ $t3p_main_options = get_option('t3p_main_options');
         <?php endif; ?>
       </div>
       <div class="register">
-        <a href="#subscribe" id="subscribe-link"><?php _e('Register Now', 't3p'); ?></a>
+        <?php if ( $t3p_main_options['t3p_main_field_register_enabled'] == "yes" ): ?>
+          <a href="#subscribe" id="subscribe-link"><?php _e('Register Now', 't3p'); ?></a>
+        <?php else: ?>
+          <a href="#discover" id="subscribe-link"><?php _e('Discover More', 't3p'); ?></a>
+        <?php endif; ?>
       </div>
     </div>
   </div>

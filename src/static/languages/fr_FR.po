@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-07-18 21:18:15+00:00\n"
-"PO-Revision-Date: 2018-07-18 23:18+0200\n"
+"POT-Creation-Date: 2018-11-26 20:13:27+00:00\n"
+"PO-Revision-Date: 2018-11-26 21:14+0100\n"
 "Last-Translator: Cilyan Olowen <gaknar@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: 404.php:18
@@ -173,19 +173,19 @@ msgstr "Les inscriptions sont ouvertes, le bouton est affiché"
 msgid "T3P Options"
 msgstr "Options du T3P"
 
-#: inc/custom-options-trail.php:303
+#: inc/custom-options-trail.php:304
 msgid "Invalid start date"
 msgstr "Date de départ invalide"
 
-#: inc/custom-options-trail.php:312
+#: inc/custom-options-trail.php:314
 msgid "Invalid start date format"
 msgstr "Format de date de départ invalide"
 
-#: inc/custom-options-trail.php:326
+#: inc/custom-options-trail.php:329
 msgid "Invalid start time format"
 msgstr "Format d'heure de départ invalide"
 
-#: inc/custom-options-trail.php:347
+#: inc/custom-options-trail.php:351
 msgid "Invalid url for registration link"
 msgstr "URL invalide pour le lien des inscriptions"
 
@@ -692,9 +692,13 @@ msgstr "minutes"
 msgid "seconds"
 msgstr "secondes"
 
-#: template-parts/header/header-video.php:55
+#: template-parts/header/header-video.php:56
 msgid "Register Now"
 msgstr "S'inscrire"
+
+#: template-parts/header/header-video.php:58
+msgid "Discover More"
+msgstr "En savoir plus"
 
 #: template-parts/page/content-page.php:23
 #: template-parts/post/content-audio.php:88

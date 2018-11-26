@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: t3p 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/t3p\n"
-"POT-Creation-Date: 2018-07-18 21:18:15+00:00\n"
+"POT-Creation-Date: 2018-11-26 20:13:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -162,19 +162,19 @@ msgstr ""
 msgid "T3P Options"
 msgstr ""
 
-#: inc/custom-options-trail.php:303
+#: inc/custom-options-trail.php:304
 msgid "Invalid start date"
 msgstr ""
 
-#: inc/custom-options-trail.php:312
+#: inc/custom-options-trail.php:314
 msgid "Invalid start date format"
 msgstr ""
 
-#: inc/custom-options-trail.php:326
+#: inc/custom-options-trail.php:329
 msgid "Invalid start time format"
 msgstr ""
 
-#: inc/custom-options-trail.php:347
+#: inc/custom-options-trail.php:351
 msgid "Invalid url for registration link"
 msgstr ""
 
@@ -660,8 +660,12 @@ msgstr ""
 msgid "seconds"
 msgstr ""
 
-#: template-parts/header/header-video.php:55
+#: template-parts/header/header-video.php:56
 msgid "Register Now"
+msgstr ""
+
+#: template-parts/header/header-video.php:58
+msgid "Discover More"
 msgstr ""
 
 #: template-parts/page/content-page.php:23
