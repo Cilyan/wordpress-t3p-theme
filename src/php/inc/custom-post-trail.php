@@ -55,6 +55,7 @@ function t3p_trail_create_post_type() {
     'rewrite'               => $rewrite,
     'capability_type'       => 'page',
     'register_meta_box_cb'  => 't3p_trail_add_metaboxes',
+    'show_in_rest'          => true,
   );
   register_post_type('trail', $args);
 
