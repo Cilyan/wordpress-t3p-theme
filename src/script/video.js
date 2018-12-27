@@ -54,12 +54,10 @@ function onPlayerReady(){
 }
 
 function onPlayerStateChange(e) {
-  if (e.data === 1){
+  if (e.data === YT.PlayerState.PLAYING){
     $('#tv').addClass('active');
-  } else if (e.data === 2){
+  } else if (e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED){
     $('#tv').removeClass('active');
     onPlayerReady();
-    tv.loadVideoById(vid[currVid]);
-    tv.seekTo(vid[currVid].startSeconds);
   }
 }
