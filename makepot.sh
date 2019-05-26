@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-WORDPRESS_TRUNK="$DIR/../trunk/tools/i18n" # Change this to point to where you pulled WP's trunk
+WORDPRESS_TRUNK="$DIR/../wordpress-trunk-i18n/tools/i18n" # Change this to point to where you pulled WP's trunk
 
 cd "$DIR" && yarn run build
 
