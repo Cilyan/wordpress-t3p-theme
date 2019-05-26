@@ -15,8 +15,10 @@ $t3p_main_options = get_option('t3p_main_options');
   </div>
   <div class="cover">
     <div class="partners">
+      <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-fl.png"; ?>" alt="">
       <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-nb.png"; ?>" alt="">
-      <?php /*<img src="<?php echo get_template_directory_uri() . "/assets/images/logo-is.png"; ?>" alt=""> */ ?>
+      <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-lao.png"; ?>" alt="">
+      <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-arb.png"; ?>" alt="">
       <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-cd31.png"; ?>" alt="">
       <img src="<?php echo get_template_directory_uri() . "/assets/images/logo-oc.png"; ?>" alt="">
     </div>
