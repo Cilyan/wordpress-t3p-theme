@@ -20,15 +20,15 @@ However, the theme can also be seen as a starter if you want to use common web d
 
 ## Getting started
 
-After you have forked, cloned or downloaded the repository, ensure you have Docker, Docker Compose and Yarn (or npm) installed.
+After you have forked, cloned or downloaded the repository, ensure you have Vagrant and Yarn (or npm) installed.
 
 Setup the environment with these commands
 
     yarn install
     yarn run build
-    docker-compose up
+    vagrant up
 
 Once the setup is bootstraped, you can restart your development environment with
 
-    docker-compose up -d
+    vagrant up
     yarn run watch
