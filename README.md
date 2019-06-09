@@ -3,7 +3,7 @@
 This is officially a theme for [www.les3pics.fr][]. It was constructed from [TwentySeventeen][] and [Underscores][], with inspiration from [SKT Adventure Lite][].
 
 However, the theme can also be seen as a starter if you want to use common web development tools:
- - A ready-to-use [docker-compose][] Wordpress + MariaDB setup
+ - A ready-to-use [Vagrant][] setup derived from [VCCW][].
  - [Yarn][] to handle build dependencies
  - [Webpack][] as the building tool with watch feature
  - [SCSS][] for styling
@@ -13,10 +13,11 @@ However, the theme can also be seen as a starter if you want to use common web d
  [TwentySeventeen]: https://wordpress.org/themes/twentyseventeen/
  [Underscores]: https://underscores.me/
  [SKT Adventure Lite]: https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/
- [docker-compose]: https://www.docker.com/
+ [Vagrant]: https://www.vagrantup.com/
  [yarn]: https://yarnpkg.com/
  [Webpack]: https://webpack.js.org/
  [SCSS]: https://sass-lang.com/
+ [VCCW]: http://vccw.cc/
 
 ## Getting started
 
