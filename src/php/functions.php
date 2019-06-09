@@ -240,7 +240,12 @@ function t3p_scripts() {
     $race_start_str .= " ";
     $race_start_str .= $t3p_main_options['t3p_main_field_time_start'];
 
-    $race_start = new DateTime($race_start_str, new DateTimeZone(get_option('timezone_string')));
+    $tz_string = get_option('timezone_string');
+    if ( empty( $tz_string ) ) {
+      $tz_string = 'Europe/Paris';
+    }
+
+    $race_start = new DateTime($race_start_str, new DateTimeZone($tz_string));
     $countdown_props = array(
       'start_timestamp' => $race_start->getTimestamp() * 1000,
       'label_started' => esc_html__("Let's go!", 't3p'),
