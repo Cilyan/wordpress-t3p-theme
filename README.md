@@ -33,3 +33,36 @@ Once the setup is bootstraped, you can restart your development environment with
 
     vagrant up
     yarn run watch
+
+## Cloning production website to test server
+
+The deployment of real data to test server requires a bit more configuration.
+
+1. Use the [Duplicator][] plugin on the production website to export a full
+backup of the data.
+2. Download the generated archive and `installer.php` script into the root
+directory of the project (e.g. here, near this README).
+3. Log into the vagrant machine and become root
+
+        vagrant ssh
+        sudo su -
+
+4. Remove the complete Wordpress installation in `/var/www/html`, except for the
+`wp-content/themes/t3ptheme` directory.
+
+        find /var/www/html/ ! -name 't3ptheme' -type d -exec rm -rf {} +
+
+5. Copy `/vagrant/installer.php` and the `/vagrant/xxxxx_archive.zip` package
+file into the directory `/var/www/html`.
+
+        cp /vagrant/installer.php /var/www/html/
+        cp /vagrant/*_archive.zip /var/www/html/
+
+6. Open `installer.php` from your browser (e.g.
+`http://vccw.test/installer.php`)
+7. Follow the steps. The database configuration can be found in
+`provision/default.yml`.
+8. Using a local console, run again `yarn run build`, in case the Duplicator
+replaced your file with old ones.
+
+[Duplicator]: https://wordpress.org/plugins/duplicator/
