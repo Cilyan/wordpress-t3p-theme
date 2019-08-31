@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-let hasSourceMaps = true;
+let hasSourceMaps = (process.env.NODE_ENV === 'development');
 
 module.exports = {
   entry: {
@@ -30,8 +30,13 @@ module.exports = {
     filename: 'assets/script/[name].js',
     path: path.resolve(__dirname, 'dist')
   },
+  performance: {
+    assetFilter: function(assetFilename) {
+      return assetFilename.endsWith('.js');
+    }
+  },
   context: path.join(__dirname, 'src'),
-  devtool: "source-map",
+  devtool: process.env.NODE_ENV === 'development' ? "source-map" : false,
   module: {
     rules: [
       {
