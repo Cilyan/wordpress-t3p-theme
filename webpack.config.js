@@ -1,8 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let hasSourceMaps = true;
 
@@ -35,36 +35,36 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
-            fallback: 'style-loader',
-            use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: hasSourceMaps
-              }
-            },
-            {
-              loader: 'postcss-loader', // Run post css actions
-              options: {
-                plugins: function () { // post css plugins, can be exported to postcss.config.js
-                  return [
-                    require('precss'),
-                    require('autoprefixer')
-                  ];
-                },
-                sourceMap: hasSourceMaps
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                sourceMap: hasSourceMaps
-              }
+        test:  /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: hasSourceMaps
             }
-          ]
-        })
+          },
+          {
+            loader: 'postcss-loader', // Run post css actions
+            options: {
+              plugins: function () { // post css plugins, can be exported to postcss.config.js
+                return [
+                  require('precss'),
+                  require('autoprefixer')
+                ];
+              },
+              sourceMap: hasSourceMaps
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: hasSourceMaps
+            }
+          }
+        ]
       },
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -77,20 +77,19 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist/*']), /* Do not remove the top-level directory, or docker will loose the dynamic link to the virtual installation */
+    new CleanWebpackPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default']
     }),
-    new ExtractTextPlugin({
-      filename: (getPath) => {
-        var entry = getPath('[name]');
+    new MiniCssExtractPlugin({
+      moduleFilename: ({name}) => {
         return {
           'main': 'style.css',
           'admin-trail': 'assets/styles/admin-trail.css'
-        }[entry];
+        }[name];
       },
     }),
     new CopyWebpackPlugin([
