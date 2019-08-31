@@ -68,7 +68,7 @@ plugins:
 # WordPress Default Theme
 # Theme's slug or url to the theme's .zip.
 #
-theme: 't3ptheme'
+theme: 't3p'
 
 #
 # WordPress Options
