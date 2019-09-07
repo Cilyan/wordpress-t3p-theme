@@ -7,7 +7,7 @@ However, the theme can also be seen as a starter if you want to use common web d
  - [Yarn][] to handle build dependencies
  - [Webpack][] as the building tool with watch feature
  - [SCSS][] for styling
- - SVG icon font (Webpack merge support to come)
+ - SVG icon sprite generated from single icon files
 
  [www.les3pics.fr]: https://www.les3pics.fr
  [TwentySeventeen]: https://wordpress.org/themes/twentyseventeen/

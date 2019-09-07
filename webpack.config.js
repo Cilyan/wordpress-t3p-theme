@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 let hasSourceMaps = (process.env.NODE_ENV === 'development');
 
@@ -10,7 +11,8 @@ module.exports = {
   entry: {
     "main": [
       "./script/main.js",
-      "./styles/style.scss"
+      "./styles/style.scss",
+      "./icons/index.js"
     ],
     "admin-trail": [
       "./script/trail.js",
@@ -77,7 +79,17 @@ module.exports = {
       },
       {
         test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        exclude: /icons/,
         loader: "file-loader?name=assets/fonts/[name].[ext]"
+      },
+      {
+        test: /icons\/.*\.svg$/,
+        loader: 'svg-sprite-loader',
+        options: {
+          extract: true,
+          spriteFilename: 'assets/images/svg-icons.svg',
+          runtimeCompat: true
+        }
       }
     ]
   },
@@ -100,7 +112,14 @@ module.exports = {
     new CopyWebpackPlugin([
         { context: 'php', from:'**/*'},
         { context: 'static', from:'**/*'},
-    ])
+    ]),
+    new SpriteLoaderPlugin({
+      plainSprite: true,
+      spriteAttrs: {
+        style: "position: absolute; width: 0; height: 0; overflow: hidden;",
+        version: "1.1"
+      }
+    })
   ],
   externals: {
     jquery: 'jQuery',
