@@ -26,13 +26,19 @@ After you have forked, cloned or downloaded the repository, ensure you have Vagr
 Setup the environment with these commands
 
     yarn install
-    yarn run build
+    yarn run dev
     vagrant up
 
 Once the setup is bootstraped, you can restart your development environment with
 
     vagrant up
     yarn run watch
+
+When deploying, generate production-ready files using
+
+    yarn run prod
+
+This will create smaller files and remove source maps. The compilation builds the `dist/` directory, which contains everything needed for the theme and is ready to pack.
 
 ## Cloning production website to test server
 
@@ -48,9 +54,9 @@ directory of the project (e.g. here, near this README).
         sudo su -
 
 4. Remove the complete Wordpress installation in `/var/www/html`, except for the
-`wp-content/themes/t3ptheme` directory.
+`wp-content/themes/t3p` directory.
 
-        find /var/www/html/ ! -name 't3ptheme' -type d -exec rm -rf {} +
+        find /var/www/html/ ! -name 't3p' -type d -exec rm -rf {} +
 
 5. Copy `/vagrant/installer.php` and the `/vagrant/xxxxx_archive.zip` package
 file into the directory `/var/www/html`.
@@ -62,7 +68,7 @@ file into the directory `/var/www/html`.
 `http://vccw.test/installer.php`)
 7. Follow the steps. The database configuration can be found in
 `provision/default.yml`.
-8. Using a local console, run again `yarn run build`, in case the Duplicator
+8. Using a local console, run again `yarn run dev`, in case the Duplicator
 replaced your file with old ones.
 
 [Duplicator]: https://wordpress.org/plugins/duplicator/

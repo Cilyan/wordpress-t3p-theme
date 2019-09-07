@@ -23,7 +23,7 @@
   "scripts": {
     "dev": "webpack --mode=development",
     "prod": "webpack --mode=production",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch --mode=development"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
